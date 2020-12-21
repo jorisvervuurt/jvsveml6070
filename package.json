@@ -14,7 +14,9 @@
     ],
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "files": ["dist/**/*"],
+    "files": [
+        "dist/**/*"
+    ],
     "scripts": {
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
         "format-check": "npx prettier --check .",
