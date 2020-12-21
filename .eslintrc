@@ -16,10 +16,18 @@
                 "ignoreUrls": true
             }
         ],
+        "eol-last": [
+            "error",
+            "always"
+        ],
         "quotes": "off",
         "@typescript-eslint/quotes": [
             "error",
             "single"
+        ],
+        "semi": [
+            "error",
+            "always"
         ],
         "@typescript-eslint/no-inferrable-types": 0
     }
