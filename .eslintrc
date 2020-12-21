@@ -1,0 +1,26 @@
+{
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+        "max-len": [
+            2,
+            {
+                "code": 120,
+                "tabWidth": 4,
+                "ignoreUrls": true
+            }
+        ],
+        "quotes": "off",
+        "@typescript-eslint/quotes": [
+            "error",
+            "single"
+        ],
+        "@typescript-eslint/no-inferrable-types": 0
+    }
+}
