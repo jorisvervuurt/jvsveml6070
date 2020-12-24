@@ -1,12 +1,15 @@
 {
     "extends": "@tsconfig/node14/tsconfig.json",
-
     "compilerOptions": {
         "preserveConstEnums": true,
         "declaration": true,
         "outDir": "dist"
     },
-
-    "include": ["src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
+    "include": [
+        "src/**/*",
+    ],
+    "exclude": [
+        "node_modules",
+        "**/*.spec.ts"
+    ]
 }
