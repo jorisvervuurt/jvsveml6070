@@ -1,4 +1,4 @@
-export class VEML6070 {
+export class Sensor {
 
     // TODO: add implementation.
 

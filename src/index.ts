@@ -1,1 +1,5 @@
-export * from './veml6070/VEML6070';
+import { Sensor } from './sensor/Sensor';
+
+export {
+    Sensor,
+};
