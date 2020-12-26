@@ -20,7 +20,7 @@
     "scripts": {
         "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
         "format": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx",
-        "build": "npx tsc"
+        "build": "rm -rf dist && npx tsc"
     },
     "author": "Joris Vervuurt Software <developer@joris-vervuurt.com> (https://www.joris-vervuurt.com)",
     "repository": {
@@ -40,6 +40,7 @@
         "@typescript-eslint/eslint-plugin": "^4.10.0",
         "@typescript-eslint/parser": "^4.10.0",
         "eslint": "^7.16.0",
+        "eslint-plugin-tsdoc": "^0.2.10",
         "typescript": "^4.1.3"
     }
 }

@@ -1,13 +1,15 @@
 {
     "parser": "@typescript-eslint/parser",
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "eslint-plugin-tsdoc"
     ],
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended"
     ],
     "rules": {
+        "tsdoc/syntax": "warn",
         "max-len": [
             2,
             {
@@ -29,6 +31,42 @@
             "error",
             "always"
         ],
-        "@typescript-eslint/no-inferrable-types": 0
+        "indent": [
+            "error",
+            4
+        ],
+        "@typescript-eslint/no-inferrable-types": 0,
+        "keyword-spacing": "off",
+        "@typescript-eslint/keyword-spacing": [
+            "error"
+        ],
+        "space-before-function-paren": [
+            "error",
+            {
+                "anonymous": "always",
+                "named": "never",
+                "asyncArrow": "always"
+            }
+        ],
+        "brace-style": [
+            "error",
+            "1tbs"
+        ],
+        "lines-between-class-members": [
+            "error",
+            "always"
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1,
+                "maxBOF": 1,
+                "maxEOF": 1
+            }
+        ],
+        "comma-dangle": [
+            "error",
+            "always-multiline"
+        ]
     }
 }
