@@ -1,4 +1,3 @@
-
 import { ByteBits } from './ByteBits';
 
 export class Byte {
@@ -9,16 +8,18 @@ export class Byte {
     private _buffer: Buffer;
     
     /**
-     * `Byte` constructor.
+     * Constructs a new `Byte` instance.
+     * 
+     * @param buffer - An optional `Buffer` instance to use.
      */
-    constructor() {
-        this._buffer = Buffer.alloc(1);
+    constructor(buffer?: Buffer) {
+        this._buffer = (buffer instanceof Buffer) ? buffer : Buffer.alloc(1);
     }
 
     /**
      * Reads the value of a specific bit.
      * 
-     * @param index - The index of the bit to read. Should be a value from 0 to 7.
+     * @param index - The index of the bit to read (in binary order, right to left). Should be a value from 0 to 7.
      * @returns A boolean value that represents the value of the bit.
      */
     public readBit(index: number): boolean {
@@ -28,7 +29,7 @@ export class Byte {
     /**
      * Reads the values of all eight bits.
      * 
-     * @returns An array of booleans representing the bit values (in bit order).
+     * @returns An array of booleans representing the bit values (in binary order, right to left).
      */
     public readBits(): ByteBits {
         return [
@@ -46,7 +47,7 @@ export class Byte {
     /**
      * Writes the value of a specific bit.
      * 
-     * @param index - The index of the bit to write. Should be a value from 0 to 7.
+     * @param index - The index of the bit to write (in binary order, right to left). Should be a value from 0 to 7.
      * @param value - A boolean value representing the value of the bit.
      */
     public writeBit(index: number, value: boolean): void {
@@ -60,7 +61,7 @@ export class Byte {
     /**
      * Writes the values of all eight bits.
      * 
-     * @param bits - An array of booleans representing the bit values (in bit order).
+     * @param bits - An array of booleans representing the bit values (in binary order, right to left).
      */
     public writeBits(bits: ByteBits): void {
         for (const [index, value] of bits.entries()) {
@@ -69,9 +70,9 @@ export class Byte {
     }
 
     /**
-     * Returns a `Buffer` instance representing this `Byte` instance.
+     * Returns a `Buffer` instance representing the `Byte` instance.
      * 
-     * @returns The `Buffer` instance representing this `Byte` instance.
+     * @returns The `Buffer` instance representing the `Byte` instance.
      */
     public toBuffer(): Buffer {
         return this._buffer;
@@ -80,11 +81,23 @@ export class Byte {
     /**
      * Creates a new `Byte` instance from the values of all eight bits.
      * 
-     * @param bits - An array of booleans representing the bit values (in bit order).
+     * @param bits - An array of booleans representing the bit values (in binary order, right to left).
      */
     public static fromBits(bits: ByteBits): Byte {
         const byte = new Byte();
         byte.writeBits(bits);
+
+        return byte;
+    }
+
+    /**
+     * Creates a new `Byte` instance from a hexadecimal value.
+     * 
+     * @param hex - A hexadecimal value, e.g. `0x01` (binary `00000001`).
+     */
+    public static fromHex(hex: number): Byte {
+        const buffer = Buffer.from([hex]),
+            byte = new Byte(buffer);
 
         return byte;
     }
