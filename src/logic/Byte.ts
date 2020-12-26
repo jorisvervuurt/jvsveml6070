@@ -20,16 +20,16 @@ export class Byte {
      * Reads the value of a specific bit.
      * 
      * @param index - The index of the bit to read (in binary order, right to left). Should be a value from 0 to 7.
-     * @returns A boolean value that represents the value of the bit.
+     * @returns The value of the bit.
      */
-    public readBit(index: number): boolean {
-        return 1 === ((this._buffer[0] >> index) % 2);
+    public readBit(index: number): number {
+        return (this._buffer[0] >> index) % 2;
     }
 
     /**
      * Reads the values of all eight bits.
      * 
-     * @returns An array of booleans representing the bit values (in binary order, right to left).
+     * @returns An array of bit values (in binary order, right to left).
      */
     public readBits(): ByteBits {
         return [
@@ -48,10 +48,10 @@ export class Byte {
      * Writes the value of a specific bit.
      * 
      * @param index - The index of the bit to write (in binary order, right to left). Should be a value from 0 to 7.
-     * @param value - A boolean value representing the value of the bit.
+     * @param value - The value of the bit.
      */
-    public writeBit(index: number, value: boolean): void {
-        if (false === value) {
+    public writeBit(index: number, value: number): void {
+        if (0 === value) {
             this._buffer[0] &= ~(1 << index);
         } else {
             this._buffer[0] |= (1 << index);
@@ -61,7 +61,7 @@ export class Byte {
     /**
      * Writes the values of all eight bits.
      * 
-     * @param bits - An array of booleans representing the bit values (in binary order, right to left).
+     * @param bits - An array of bit values (in binary order, right to left).
      */
     public writeBits(bits: ByteBits): void {
         for (const [index, value] of bits.entries()) {
@@ -81,7 +81,7 @@ export class Byte {
     /**
      * Creates a new `Byte` instance from the values of all eight bits.
      * 
-     * @param bits - An array of booleans representing the bit values (in binary order, right to left).
+     * @param bits - An array of bit values (in binary order, right to left).
      */
     public static fromBits(bits: ByteBits): Byte {
         const byte = new Byte();

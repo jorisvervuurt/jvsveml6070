@@ -1,4 +1,4 @@
 export type ByteBits = {
-    0: boolean;
+    0: number;
     length: 8;
-} & ReadonlyArray<boolean>;
+} & ReadonlyArray<number>;
