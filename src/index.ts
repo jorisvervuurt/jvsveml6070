@@ -1,4 +1,4 @@
-import { Sensor } from './sensor/Sensor';
+import { Sensor } from './lib/Sensor';
 
 export {
     Sensor,

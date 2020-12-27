@@ -1,4 +1,4 @@
-import { ByteBits } from './ByteBits';
+import { LogicError } from './errors/LogicError';
 
 export class Byte {
     
@@ -29,19 +29,16 @@ export class Byte {
     /**
      * Reads the values of all eight bits.
      * 
-     * @returns An array of bit values (in binary order, right to left).
+     * @returns A map of bit values keyed by the bit index (in binary order, right to left).
      */
-    public readBits(): ByteBits {
-        return [
-            this.readBit(0),
-            this.readBit(1),
-            this.readBit(2),
-            this.readBit(3),
-            this.readBit(4),
-            this.readBit(5),
-            this.readBit(6),
-            this.readBit(7),
-        ];
+    public readBits(): Map<number, number> {
+        const bits: Map<number, number> = new Map();
+
+        for (let index = 0; index < 8; index++) {
+            bits.set(index, this.readBit(index));
+        }
+
+        return bits;
     }
 
     /**
@@ -51,6 +48,14 @@ export class Byte {
      * @param value - The value of the bit.
      */
     public writeBit(index: number, value: number): void {
+        if (0 > index || 7 < index) {
+            throw new LogicError(`Invalid bit index provided! ${index} provided, expected a value from 0 to 7.`);
+        }
+
+        if (0 > value || 1 < value) {
+            throw new LogicError(`Invalid bit value provided! ${value} provided, expected 0 or 1.`);
+        }
+
         if (0 === value) {
             this._buffer[0] &= ~(1 << index);
         } else {
@@ -61,9 +66,13 @@ export class Byte {
     /**
      * Writes the values of all eight bits.
      * 
-     * @param bits - An array of bit values (in binary order, right to left).
+     * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
      */
-    public writeBits(bits: ByteBits): void {
+    public writeBits(bits: Map<number, number>): void {
+        if (8 < bits.size) {
+            throw new LogicError(`Too many bit values provided! ${bits.size} provided, expected a maximum of 8.`);
+        }
+
         for (const [index, value] of bits.entries()) {
             this.writeBit(index, value);
         }
@@ -81,9 +90,9 @@ export class Byte {
     /**
      * Creates a new `Byte` instance from the values of all eight bits.
      * 
-     * @param bits - An array of bit values (in binary order, right to left).
+     * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
      */
-    public static fromBits(bits: ByteBits): Byte {
+    public static fromBits(bits: Map<number, number>): Byte {
         const byte = new Byte();
         byte.writeBits(bits);
 
