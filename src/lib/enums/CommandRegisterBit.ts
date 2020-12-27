@@ -1,4 +1,5 @@
-export enum CommandBit {
+export enum CommandRegisterBit {
+
     /**
      * Shutdown mode setting.
      */
@@ -7,7 +8,7 @@ export enum CommandBit {
     /**
      * Reserved.
      */
-    RESERVED_1 = 1,
+    RESERVED_0 = 1,
 
     /**
      * Integration time setting (first bit).
@@ -32,10 +33,11 @@ export enum CommandBit {
     /**
      * Reserved.
      */
-    RESERVED_6 = 6,
+    RESERVED_1 = 6,
 
     /**
      * Reserved.
      */
-    RESERVED_7 = 7,
+    RESERVED_2 = 7,
+
 }

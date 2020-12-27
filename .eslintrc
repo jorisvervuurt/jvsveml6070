@@ -33,7 +33,10 @@
         ],
         "indent": [
             "error",
-            4
+            4,
+            {
+                "SwitchCase": 1
+            }
         ],
         "@typescript-eslint/no-inferrable-types": 0,
         "keyword-spacing": "off",

@@ -1,1 +1,5 @@
-export class LogicError extends Error {}
+export class LogicError extends Error {
+
+    // No custom implementation needed.
+
+}
