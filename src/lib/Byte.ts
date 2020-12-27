@@ -46,6 +46,9 @@ export class Byte {
      * 
      * @param index - The index of the bit to write (in binary order, right to left). Should be a value from 0 to 7.
      * @param value - The value of the bit.
+     * 
+     * @throws {@link LogicError}
+     * Thrown if an invalid bit index and/or value is provided.
      */
     public writeBit(index: number, value: number): void {
         if (0 > index || 7 < index) {
@@ -64,9 +67,12 @@ export class Byte {
     }
 
     /**
-     * Writes the values of all eight bits.
+     * Writes the values of one or more bits.
      * 
      * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
+     * 
+     * @throws {@link LogicError}
+     * Thrown if too many bits values are provided, or if invalid bit indexes and/or values are provided.
      */
     public writeBits(bits: Map<number, number>): void {
         if (8 < bits.size) {
@@ -88,7 +94,7 @@ export class Byte {
     }
 
     /**
-     * Creates a new `Byte` instance from the values of all eight bits.
+     * Creates a new `Byte` instance from the values of one or more bits.
      * 
      * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
      */
