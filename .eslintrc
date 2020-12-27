@@ -70,6 +70,9 @@
         "comma-dangle": [
             "error",
             "always-multiline"
+        ],
+        "@typescript-eslint/member-ordering": [
+            "error"
         ]
     }
 }

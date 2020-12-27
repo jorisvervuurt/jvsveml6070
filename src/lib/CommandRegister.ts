@@ -1,6 +1,7 @@
 import { Byte } from './Byte';
 import { CommandRegisterBit } from './enums/CommandRegisterBit';
 import { IntegrationTime } from './enums/IntegrationTime';
+import { ShutdownMode } from './enums/ShutdownMode';
 import { CommandRegisterError } from './errors/CommandRegisterError';
 
 export class CommandRegister extends Byte {
@@ -16,6 +17,9 @@ export class CommandRegister extends Byte {
 
         // Set the correct initial bit values based on the datasheet.
         this.writeBits(new Map([
+            // Set the value of the shutdown mode bit to 1.
+            [CommandRegisterBit.SD, 1],
+
             // Set the value of the first reserved bit to 1.
             [CommandRegisterBit.RESERVED_0, 1],
 
@@ -25,9 +29,32 @@ export class CommandRegister extends Byte {
     }
 
     /**
-     * Retrieves the current integration time.
+     * Retrieves the shutdown mode.
      * 
-     * @returns The current integration time.
+     * @returns The shutdown mode.
+     */
+    public getShutdownMode(): ShutdownMode {
+        return this.readBit(CommandRegisterBit.SD);
+    }
+
+    /**
+     * Sets the shutdown mode.
+     * 
+     * @param shutdownMode - The shutdown mode.
+     */
+    public setShutdownMode(shutdownMode: ShutdownMode): void {
+        if (!Number.isInteger(shutdownMode) || !Object.values(ShutdownMode).includes(shutdownMode)) {
+            // eslint-disable-next-line max-len
+            throw new CommandRegisterError(`Invalid shutdown mode provided! ${shutdownMode} provided, expected a valid \`ShutdownMode\` enum value.`);
+        }
+
+        this.writeBit(CommandRegisterBit.SD, shutdownMode);
+    }
+
+    /**
+     * Retrieves the integration time.
+     * 
+     * @returns The integration time.
      */
     public getIntegrationTime(): IntegrationTime {
         const firstBitValue: number = this.readBit(CommandRegisterBit.IT_0),

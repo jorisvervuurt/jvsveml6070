@@ -17,6 +17,30 @@ export class Byte {
     }
 
     /**
+     * Creates a new `Byte` instance from the values of one or more bits.
+     * 
+     * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
+     */
+    public static fromBits(bits: Map<number, number>): Byte {
+        const byte = new Byte();
+        byte.writeBits(bits);
+
+        return byte;
+    }
+
+    /**
+     * Creates a new `Byte` instance from a hexadecimal value.
+     * 
+     * @param hex - A hexadecimal value, e.g. `0x01` (binary `00000001`).
+     */
+    public static fromHex(hex: number): Byte {
+        const buffer = Buffer.from([hex]),
+            byte = new Byte(buffer);
+
+        return byte;
+    }
+
+    /**
      * Reads the value of a specific bit.
      * 
      * @param index - The index of the bit to read (in binary order, right to left). Should be a value from 0 to 7.
@@ -91,30 +115,6 @@ export class Byte {
      */
     public toBuffer(): Buffer {
         return this._buffer;
-    }
-
-    /**
-     * Creates a new `Byte` instance from the values of one or more bits.
-     * 
-     * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
-     */
-    public static fromBits(bits: Map<number, number>): Byte {
-        const byte = new Byte();
-        byte.writeBits(bits);
-
-        return byte;
-    }
-
-    /**
-     * Creates a new `Byte` instance from a hexadecimal value.
-     * 
-     * @param hex - A hexadecimal value, e.g. `0x01` (binary `00000001`).
-     */
-    public static fromHex(hex: number): Byte {
-        const buffer = Buffer.from([hex]),
-            byte = new Byte(buffer);
-
-        return byte;
     }
 
 }

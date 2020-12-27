@@ -5,3 +5,8 @@ export {
     IntegrationTime,
     Sensor,
 };
+
+// TODO: remove as this is for testing purposes.
+Sensor.init().then((sensor: Sensor) => {
+    console.log(sensor);
+});
