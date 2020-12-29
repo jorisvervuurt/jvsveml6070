@@ -86,7 +86,7 @@ export class Sensor {
                     resolve();
                 })
                 .catch((reason) => {
-                    reject(new SensorError(`Failed to initialize sensor! ${reason}`));
+                    reject(new SensorError('Failed to initialize sensor!', reason));
                 });
         });
     }
@@ -109,7 +109,7 @@ export class Sensor {
                     resolve();
                 })
                 .catch((reason) => {
-                    reject(new SensorError(`Failed to destroy sensor! ${reason}`));
+                    reject(new SensorError('Failed to destroy sensor!', reason));
                 });
         });
     }
@@ -174,7 +174,7 @@ export class Sensor {
                 .then(() => resolve())
                 .catch((reason) => {
                     if (!ignoreError) {
-                        reject(new SensorError(`Failed to clear ACK state! ${reason}`));
+                        reject(new SensorError('Failed to clear ACK state!', reason));
                     } else {
                         resolve();
                     }
@@ -231,7 +231,7 @@ export class Sensor {
                     resolve();
                 })
                 .catch((reason) => {
-                    reject(new SensorError(`Failed to open I2C bus! ${reason}`));
+                    reject(new SensorError('Failed to open I2C bus!', reason));
                 });
         });
     }
@@ -251,7 +251,7 @@ export class Sensor {
                     resolve();
                 })
                 .catch((reason) => {
-                    reject(new SensorError(`Failed to close I2C bus! ${reason}`));
+                    reject(new SensorError('Failed to close I2C bus!', reason));
                 });
         });
     }
@@ -272,7 +272,7 @@ export class Sensor {
                     this._commandRegister.writeBits(commandRegister.readBits());
                     resolve();
                 }).catch((reason) => {
-                    reject(new SensorError(`Failed to update the sensor's command register! ${reason}`));    
+                    reject(new SensorError('Failed to update the sensor\'s command register!', reason));    
                 });
         });
     }

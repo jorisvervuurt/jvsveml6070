@@ -6,7 +6,7 @@ export enum ShutdownMode {
     DISABLED = 0,
 
     /**
-     * Enabled.
+     * Enabled (reduces power consumption to less than 1 μA according to the datasheet).
      */
     ENABLED = 1,
 
