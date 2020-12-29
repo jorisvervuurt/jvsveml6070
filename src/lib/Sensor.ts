@@ -47,7 +47,7 @@ export class Sensor {
     constructor(rSet: number = 270, i2cBusNr: number = 1) {
         this.rSet = rSet;
         this.i2cBusNr = i2cBusNr;
-        
+
         this._i2cBus = undefined;
         this._isI2cBusOpen = false;
         this._commandRegister = new CommandRegister();
@@ -62,9 +62,9 @@ export class Sensor {
      * 
      * @returns A `Promise` that resolves when the sensor has been initialized.
      */
-    public static initialize(rSet: number = 270, busNr: number = 1): Promise<Sensor> {
+    public static initialize(rSet: number = 270, i2cBusNr: number = 1): Promise<Sensor> {
         return new Promise((resolve, reject) => {
-            const sensor = new Sensor(rSet, busNr);
+            const sensor = new Sensor(rSet, i2cBusNr);
             sensor.initialize()
                 .then(() => resolve(sensor))
                 .catch((reason) => reject(reason));
