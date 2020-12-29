@@ -7,25 +7,55 @@ import { CommandRegisterError } from './errors/CommandRegisterError';
 export class CommandRegister extends Byte {
 
     /**
-     * Constructs a new `CommandRegister` instance.
-     * Sets the correct initial bit values based on the datasheet.
+     * Creates a new `CommandRegister` instance.
+     * If the optional `Buffer` instance is not provided, the correct initial bit values are set based on the datasheet.
+     * 
+     * @param buffer - An optional `Buffer` instance to use.
      * 
      * @see {@link https://www.vishay.com/docs/84277/veml6070.pdf|Vishay VEML6070 datasheet}, pages 6 to 8.
      */
-    constructor() {
-        super();
+    constructor(buffer?: Buffer) {
+        super(buffer);
+        
+        // If no `Buffer` instance is provided, set the initial bit values based on the datasheet.
+        if (!(buffer instanceof Buffer)) {
+            this.writeBits(new Map([
+                // Set the value of the first reserved bit to 1.
+                [CommandRegisterBit.RESERVED_0, 1],
 
-        // Set the correct initial bit values based on the datasheet.
-        this.writeBits(new Map([
-            // Set the value of the shutdown mode bit to 1.
-            [CommandRegisterBit.SD, 1],
+                // Set the value of the first integration time setting bit to 1, to match the default 1T integration
+                // time.
+                [CommandRegisterBit.IT_0, 1],
+            ]));
+        }
+    }
 
-            // Set the value of the first reserved bit to 1.
-            [CommandRegisterBit.RESERVED_0, 1],
+    /**
+     * Creates a new `CommandRegister` instance from the values of one or more bits.
+     * The initial bit values are set based on the datasheet, but they can be overwritten by passing their values via 
+     * the `bits` argument.
+     * 
+     * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
+     * 
+     * @see {@link https://www.vishay.com/docs/84277/veml6070.pdf|Vishay VEML6070 datasheet}, pages 6 to 8.
+     */
+    public static fromBits(bits: Map<number, number>): CommandRegister {
+        const commandRegister: CommandRegister = new CommandRegister();
+        commandRegister.writeBits(bits);
 
-            // Set the value of the first integration time setting bit to 1, to match the default 1T integration time.
-            [CommandRegisterBit.IT_0, 1],
-        ]));
+        return commandRegister;
+    }
+
+    /**
+     * Creates a new `CommandRegister` instance from a hexadecimal value.
+     * 
+     * @param hex - A hexadecimal value, e.g. `0x01` (binary `00000001`).
+     */
+    public static fromHex(hex: number): Byte {
+        const buffer: Buffer = Buffer.from([hex]),
+            commandRegister: CommandRegister = new CommandRegister(buffer);
+
+        return commandRegister;
     }
 
     /**
@@ -110,6 +140,15 @@ export class CommandRegister extends Byte {
             [CommandRegisterBit.IT_0, firstBitValue],
             [CommandRegisterBit.IT_1, secondBitValue],
         ]));
+    }
+
+    /**
+     * Clones the `CommandRegister` instance.
+     * 
+     * @returns The cloned `CommandRegister` instance.
+     */
+    public clone(): CommandRegister {
+        return CommandRegister.fromBits(this.readBits());
     }
 
 }

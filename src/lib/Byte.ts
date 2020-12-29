@@ -5,10 +5,10 @@ export class Byte {
     /**
      * The internal `Buffer` instance.
      */
-    private _buffer: Buffer;
+    protected _buffer: Buffer;
     
     /**
-     * Constructs a new `Byte` instance.
+     * Creates a new `Byte` instance.
      * 
      * @param buffer - An optional `Buffer` instance to use.
      */
@@ -22,7 +22,7 @@ export class Byte {
      * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
      */
     public static fromBits(bits: Map<number, number>): Byte {
-        const byte = new Byte();
+        const byte: Byte = new Byte();
         byte.writeBits(bits);
 
         return byte;
@@ -34,8 +34,8 @@ export class Byte {
      * @param hex - A hexadecimal value, e.g. `0x01` (binary `00000001`).
      */
     public static fromHex(hex: number): Byte {
-        const buffer = Buffer.from([hex]),
-            byte = new Byte(buffer);
+        const buffer: Buffer = Buffer.from([hex]),
+            byte: Byte = new Byte(buffer);
 
         return byte;
     }
@@ -44,6 +44,7 @@ export class Byte {
      * Reads the value of a specific bit.
      * 
      * @param index - The index of the bit to read (in binary order, right to left). Should be a value from 0 to 7.
+     * 
      * @returns The value of the bit.
      */
     public readBit(index: number): number {
