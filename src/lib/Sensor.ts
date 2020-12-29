@@ -78,17 +78,16 @@ export class Sensor {
      */
     public initialize(): Promise<void> {
         return new Promise((resolve, reject) => {
-            Promise.all([
-                this._checkSensorState(false),
-                this._openBus(),
-                this._updateCommandRegister(this._commandRegister),
-            ]).then(() => {
-                this._isInitialized = true;
-
-                resolve();
-            }).catch((reason) => {
-                reject(new SensorError(`Failed to initialize sensor! ${reason}`));
-            });
+            this._checkI2cBusState(false)
+                .then(() => this._openBus())
+                .then(() => this._updateCommandRegister(this._commandRegister))
+                .then(() => {
+                    this._isInitialized = true;
+                    resolve();
+                })
+                .catch((reason) => {
+                    reject(new SensorError(`Failed to initialize sensor! ${reason}`));
+                });
         });
     }
 
@@ -102,17 +101,16 @@ export class Sensor {
             const commandRegister = new CommandRegister();
             commandRegister.setShutdownMode(ShutdownMode.ENABLED);
 
-            Promise.all([
-                this._checkSensorState(true),
-                this._updateCommandRegister(commandRegister),
-                this._closeBus(),
-            ]).then(() => {
-                this._isInitialized = false;
-
-                resolve();
-            }).catch((reason) => {
-                reject(new SensorError(`Failed to destroy sensor! ${reason}`));
-            });
+            this._checkSensorState(true)
+                .then(() => this._updateCommandRegister(commandRegister))
+                .then(() => this._closeBus())
+                .then(() => {
+                    this._isInitialized = false;
+                    resolve();
+                })
+                .catch((reason) => {
+                    reject(new SensorError(`Failed to destroy sensor! ${reason}`));
+                });
         });
     }
 
@@ -171,18 +169,16 @@ export class Sensor {
      */
     public clearAckState(ignoreError: boolean = true): Promise<void> {
         return new Promise((resolve, reject) => {
-            Promise.all([
-                this._checkI2cBusState(true),
-                this._i2cBus?.i2cRead(I2CAddress.AR, 1, Buffer.alloc(1)),
-            ]).then(() => {
-                resolve();
-            }).catch((reason) => {
-                if (!ignoreError) {
-                    reject(new SensorError(`Failed to clear ACK state! ${reason}`));
-                } else {
-                    resolve();
-                }
-            });
+            this._checkI2cBusState(true)
+                .then(() => this._i2cBus?.i2cRead(I2CAddress.AR, 1, Buffer.alloc(1)))
+                .then(() => resolve())
+                .catch((reason) => {
+                    if (!ignoreError) {
+                        reject(new SensorError(`Failed to clear ACK state! ${reason}`));
+                    } else {
+                        resolve();
+                    }
+                });
         });
     }
 
@@ -227,17 +223,16 @@ export class Sensor {
      */
     private _openBus(): Promise<void> {
         return new Promise((resolve, reject) => {
-            Promise.all([
-                this._checkI2cBusState(false),
-                openPromisified(this.i2cBusNr),
-            ]).then((results: [void, PromisifiedBus]) => {
-                this._i2cBus = results[1];
-                this._isI2cBusOpen = true;
-
-                resolve();
-            }).catch((reason) => {
-                reject(new SensorError(`Failed to open I2C bus! ${reason}`));
-            });
+            this._checkI2cBusState(false)
+                .then(() => openPromisified(this.i2cBusNr))
+                .then((i2cBus: PromisifiedBus) => {
+                    this._i2cBus = i2cBus;
+                    this._isI2cBusOpen = true;
+                    resolve();
+                })
+                .catch((reason) => {
+                    reject(new SensorError(`Failed to open I2C bus! ${reason}`));
+                });
         });
     }
 
@@ -248,17 +243,16 @@ export class Sensor {
      */
     private _closeBus(): Promise<void> {
         return new Promise((resolve, reject) => {
-            Promise.all([
-                this._checkI2cBusState(true),
-                this._i2cBus?.close(),
-            ]).then(() => {
-                this._i2cBus = undefined;
-                this._isI2cBusOpen = false;
-
-                resolve();
-            }).catch((reason) => {
-                reject(new SensorError(`Failed to close I2C bus! ${reason}`));
-            });
+            this._checkI2cBusState(true)
+                .then(() => this._i2cBus?.close())
+                .then(() => {
+                    this._i2cBus = undefined;
+                    this._isI2cBusOpen = false;
+                    resolve();
+                })
+                .catch((reason) => {
+                    reject(new SensorError(`Failed to close I2C bus! ${reason}`));
+                });
         });
     }
 
@@ -272,17 +266,14 @@ export class Sensor {
      */
     private _updateCommandRegister(commandRegister: CommandRegister): Promise<void> {
         return new Promise((resolve, reject) => {
-            Promise.all([
-                this.clearAckState(),
-                this._checkI2cBusState(true),
-                this._i2cBus?.i2cWrite(I2CAddress.CMD, 1, commandRegister.toBuffer()),
-            ]).then(() => {
-                this._commandRegister.writeBits(commandRegister.readBits());
-
-                resolve();
-            }).catch((reason) => {
-                reject(new SensorError(`Failed to update the sensor's command register! ${reason}`));    
-            });
+            this.clearAckState()
+                .then(() => this._i2cBus?.i2cWrite(I2CAddress.CMD, 1, commandRegister.toBuffer()))
+                .then(() => {
+                    this._commandRegister.writeBits(commandRegister.readBits());
+                    resolve();
+                }).catch((reason) => {
+                    reject(new SensorError(`Failed to update the sensor's command register! ${reason}`));    
+                });
         });
     }
 
