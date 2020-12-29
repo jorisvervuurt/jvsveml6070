@@ -9,24 +9,14 @@ import { SensorError } from './errors/SensorError';
 export class Sensor {
 
     /**
-     * The RSET value (in kΩ), which is used to determine the sensor's refresh time.
-     */
-    public rSet: number;
-
-    /**
      * The I2C bus number.
      */
     public i2cBusNr: number;
 
     /**
-     * The I2C bus.
+     * The RSET value (in kΩ), which is used to determine the sensor's refresh time.
      */
-    private _i2cBus?: PromisifiedBus;
-
-    /**
-     * A value that indicates whether the I2C bus is open.
-     */
-    private _isI2cBusOpen: boolean;
+    public rSet: number;
 
     /**
      * The internal `CommandRegister` instance.
@@ -39,32 +29,42 @@ export class Sensor {
     private _isInitialized: boolean;
 
     /**
+     * The I2C bus.
+     */
+    private _i2cBus?: PromisifiedBus;
+
+    /**
+     * A value that indicates whether the I2C bus is open.
+     */
+    private _isI2cBusOpen: boolean;
+
+    /**
      * Creates a new `Sensor` instance.
      * 
-     * @param rSet - The RSET value (in kΩ), which is used to determine the sensor's refresh time. Defaults to 270 kΩ.
      * @param i2cBusNr - The I2C bus number. Defaults to 1.
+     * @param rSet - The RSET value (in kΩ), which is used to determine the sensor's refresh time. Defaults to 270 kΩ.
      */
-    constructor(rSet: number = 270, i2cBusNr: number = 1) {
-        this.rSet = rSet;
+    constructor(i2cBusNr: number = 1, rSet: number = 270) {
         this.i2cBusNr = i2cBusNr;
+        this.rSet = rSet;
 
-        this._i2cBus = undefined;
-        this._isI2cBusOpen = false;
         this._commandRegister = new CommandRegister();
         this._isInitialized = false;
+        this._i2cBus = undefined;
+        this._isI2cBusOpen = false;
     }
 
     /**
      * Initializes the sensor.
      * 
-     * @param rSet - The RSET value (in kΩ), which is used to determine the sensor's refresh time. Defaults to 270 kΩ.
      * @param i2cBusNr - The I2C bus number. Defaults to 1.
+     * @param rSet - The RSET value (in kΩ), which is used to determine the sensor's refresh time. Defaults to 270 kΩ.
      * 
      * @returns A `Promise` that resolves when the sensor has been initialized.
      */
-    public static initialize(rSet: number = 270, i2cBusNr: number = 1): Promise<Sensor> {
+    public static initialize(i2cBusNr: number = 1, rSet: number = 270): Promise<Sensor> {
         return new Promise((resolve, reject) => {
-            const sensor = new Sensor(rSet, i2cBusNr);
+            const sensor = new Sensor(i2cBusNr, rSet);
             sensor.initialize()
                 .then(() => resolve(sensor))
                 .catch((reason) => reject(reason));
