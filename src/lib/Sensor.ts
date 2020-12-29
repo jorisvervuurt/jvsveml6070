@@ -56,10 +56,10 @@ export class Sensor {
      * 
      * @returns A `Promise` that resolves when the sensor has been initialized.
      */
-    public static init(rSet: number = 270, busNr: number = 1): Promise<Sensor> {
+    public static initialize(rSet: number = 270, busNr: number = 1): Promise<Sensor> {
         return new Promise((resolve, reject) => {
             const sensor = new Sensor(rSet, busNr);
-            sensor.init()
+            sensor.initialize()
                 .then(() => resolve(sensor))
                 .catch((reason) => reject(reason));
         });
@@ -70,7 +70,7 @@ export class Sensor {
      * 
      * @returns A `Promise` that resolves when the sensor has been initialized.
      */
-    public init(): Promise<void> {
+    public initialize(): Promise<void> {
         return new Promise((resolve, reject) => {
             Promise.all([
                 this._checkSensorState(false),
@@ -81,6 +81,29 @@ export class Sensor {
                 resolve();
             }).catch((reason) => {
                 reject(new SensorError(`Failed to initialize sensor! ${reason}`));
+            });
+        });
+    }
+
+    /**
+     * Shuts down the sensor and frees up all resources.
+     * 
+     * @returns A `Promise` that resolves when the sensor has been shut down and all resources have been freed up.
+     */
+    public destroy(): Promise<void> {
+        return new Promise((resolve, reject) => {
+            const commandRegister = new CommandRegister();
+            commandRegister.setShutdownMode(ShutdownMode.ENABLED);
+
+            Promise.all([
+                this._checkSensorState(true),
+                this._updateCommandRegister(commandRegister),
+                this._closeBus(),
+            ]).then(() => {
+                this._isInitialized = false;
+                resolve();
+            }).catch((reason) => {
+                reject(new SensorError(`Failed to destroy sensor! ${reason}`));
             });
         });
     }
