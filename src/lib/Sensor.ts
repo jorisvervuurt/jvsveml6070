@@ -172,7 +172,7 @@ export class Sensor {
      * @returns The refresh time in milliseconds.
      */
     public calculateRefreshTime(): number {
-        return this.getIntegrationTime() * (this.rSet * (125 / 300));
+        return this._calculateIntegrationTimeMultiplier() * (this.rSet * (125 / 300));
     }
 
     /**
@@ -212,7 +212,7 @@ export class Sensor {
                     this._i2cBus?.i2cRead(I2CAddress.DATA_MSB, 1, Buffer.alloc(1)).then((msb: BytesRead) => {
                         this._i2cBus?.i2cRead(I2CAddress.DATA_LSB, 1, Buffer.alloc(1)).then((lsb: BytesRead) => {
                             const rawValue: number = ((msb.buffer[0] << 8) | lsb.buffer[0]),
-                                normalizedValue: number = (rawValue / this.getIntegrationTime()),
+                                normalizedValue: number = (rawValue / this._calculateIntegrationTimeMultiplier()),
                                 value: SensorValue = new SensorValue(rawValue, normalizedValue);
 
                             resolve(value);
@@ -297,6 +297,32 @@ export class Sensor {
                     reject(new SensorError('Failed to close the I2C bus.', error));
                 });
         });
+    }
+
+    /**
+     * Calculates the integration time multiplier.
+     * 
+     * @returns The integration time multiplier.
+     */
+    private _calculateIntegrationTimeMultiplier(): number {
+        let multiplier: number = 1;
+
+        switch (this.getIntegrationTime()) {
+            case IntegrationTime.IT_HALF_T:
+                multiplier = 0.5;
+                break;
+            case IntegrationTime.IT_1T:
+                multiplier = 1;
+                break;
+            case IntegrationTime.IT_2T:
+                multiplier = 2;
+                break;
+            case IntegrationTime.IT_4T:
+                multiplier = 4;
+                break;
+        }
+
+        return multiplier;
     }
 
     /**
