@@ -10,9 +10,9 @@ export class CommandRegister extends Byte {
      * Creates a new `CommandRegister` instance.
      * If the optional `Buffer` instance is not provided, the correct initial bit values are set based on the datasheet.
      * 
-     * @param buffer - An optional `Buffer` instance to use.
-     * 
      * @see {@link https://www.vishay.com/docs/84277/veml6070.pdf|Vishay VEML6070 datasheet}, pages 6 to 8.
+     * 
+     * @param buffer - An optional `Buffer` instance to use.
      */
     constructor(buffer?: Buffer) {
         super(buffer);
@@ -38,9 +38,9 @@ export class CommandRegister extends Byte {
      * The initial bit values are set based on the datasheet, but they can be overwritten by passing their values via 
      * the `bits` argument.
      * 
-     * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
-     * 
      * @see {@link https://www.vishay.com/docs/84277/veml6070.pdf|Vishay VEML6070 datasheet}, pages 6 to 8.
+     * 
+     * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
      */
     public static fromBits(bits: Map<number, number>): CommandRegister {
         const commandRegister: CommandRegister = new CommandRegister();
