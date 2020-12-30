@@ -20,6 +20,9 @@ export class CommandRegister extends Byte {
         // If no `Buffer` instance is provided, set the initial bit values based on the datasheet.
         if (!(buffer instanceof Buffer)) {
             this.writeBits(new Map([
+                // Set the value of the shutdown mode setting bit to 1.
+                [CommandRegisterBit.SD, 1],
+
                 // Set the value of the first reserved bit to 1.
                 [CommandRegisterBit.RESERVED_0, 1],
 
