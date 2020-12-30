@@ -11,13 +11,13 @@ export enum I2CAddress {
     CMD = 0x38,
 
     /**
-     * LSB data.
+     * MSB data.
      */
     DATA_MSB = 0x39,
 
     /**
      * LSB data.
      */
-    DATA_LSB = 0x33,
+    DATA_LSB = 0x38,
 
 }
