@@ -1,4 +1,5 @@
-import { openPromisified, PromisifiedBus } from 'i2c-bus';
+import { BytesRead, openPromisified, PromisifiedBus } from 'i2c-bus';
+import { SensorValue } from './SensorValue';
 import { CommandRegister } from './CommandRegister';
 import { I2CAddress } from './enums/I2CAddress';
 import { I2CBusState } from './enums/I2CBusState';
@@ -7,6 +8,7 @@ import { SensorState } from './enums/SensorState';
 import { ShutdownMode } from './enums/ShutdownMode';
 import { I2CError } from './errors/I2CError';
 import { SensorError } from './errors/SensorError';
+import { delay } from './helpers';
 
 export class Sensor {
 
@@ -33,7 +35,7 @@ export class Sensor {
     /**
      * The I2C bus.
      */
-    private _i2cBus?: PromisifiedBus;
+    private _i2cBus: PromisifiedBus | null;
 
     /**
      * The I2C bus state.
@@ -52,7 +54,7 @@ export class Sensor {
 
         this._commandRegister = new CommandRegister();
         this._state = SensorState.DISABLED;
-        this._i2cBus = undefined;
+        this._i2cBus = null;
         this._i2cBusState = I2CBusState.CLOSED;
     }
 
@@ -198,6 +200,29 @@ export class Sensor {
     }
 
     /**
+     * Reads the value.
+     * 
+     * @returns - A `Promise` that resolves when the value has been read.
+     */
+    public read(): Promise<SensorValue> {
+        return new Promise((resolve, reject) => {
+            this._checkState(SensorState.ENABLED)
+                .then(() => delay(this.calculateRefreshTime()))
+                .then(() => {
+                    this._i2cBus?.i2cRead(I2CAddress.DATA_MSB, 1, Buffer.alloc(1)).then((msb: BytesRead) => {
+                        this._i2cBus?.i2cRead(I2CAddress.DATA_LSB, 1, Buffer.alloc(1)).then((lsb: BytesRead) => {
+                            const rawValue: number = msb.buffer[0] << 8 | lsb.buffer[0];
+                            resolve(new SensorValue(rawValue));
+                        });
+                    });
+                })
+                .catch((error) => {
+                    reject(new SensorError('Failed to read value.', error));
+                });
+        });
+    }
+
+    /**
      * Checks the I2C bus state.
      * 
      * @param expectedState - The expected I2C bus state.
@@ -261,7 +286,7 @@ export class Sensor {
             this._checkI2cBusState(I2CBusState.OPENED)
                 .then(() => this._i2cBus?.close())
                 .then(() => {
-                    this._i2cBus = undefined;
+                    this._i2cBus = null;
                     this._i2cBusState = I2CBusState.CLOSED;
                     resolve();
                 })

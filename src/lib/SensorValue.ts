@@ -6,7 +6,7 @@ export class SensorValue {
     public readonly rawValue: number;
 
     /**
-     * Creates a new `SensorResult` instance.
+     * Creates a new `SensorValue` instance.
      * 
      * @param rawValue - The raw value.
      */
