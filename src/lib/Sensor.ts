@@ -1,7 +1,9 @@
 import { openPromisified, PromisifiedBus } from 'i2c-bus';
 import { CommandRegister } from './CommandRegister';
 import { I2CAddress } from './enums/I2CAddress';
+import { I2CBusState } from './enums/I2CBusState';
 import { IntegrationTime } from './enums/IntegrationTime';
+import { SensorState } from './enums/SensorState';
 import { ShutdownMode } from './enums/ShutdownMode';
 import { I2CError } from './errors/I2CError';
 import { SensorError } from './errors/SensorError';
@@ -24,9 +26,9 @@ export class Sensor {
     private _commandRegister: CommandRegister;
 
     /**
-     * A value that indicates whether the sensor is initialized.
+     * The sensor state.
      */
-    private _isInitialized: boolean;
+    private _state: SensorState;
 
     /**
      * The I2C bus.
@@ -34,9 +36,9 @@ export class Sensor {
     private _i2cBus?: PromisifiedBus;
 
     /**
-     * A value that indicates whether the I2C bus is open.
+     * The I2C bus state.
      */
-    private _isI2cBusOpen: boolean;
+    private _i2cBusState: I2CBusState;
 
     /**
      * Creates a new `Sensor` instance.
@@ -49,9 +51,9 @@ export class Sensor {
         this.rSet = rSet;
 
         this._commandRegister = new CommandRegister();
-        this._isInitialized = false;
+        this._state = SensorState.DISABLED;
         this._i2cBus = undefined;
-        this._isI2cBusOpen = false;
+        this._i2cBusState = I2CBusState.CLOSED;
     }
 
     /**
@@ -65,51 +67,54 @@ export class Sensor {
     public static initialize(i2cBusNr: number = 1, rSet: number = 270): Promise<Sensor> {
         return new Promise((resolve, reject) => {
             const sensor = new Sensor(i2cBusNr, rSet);
-            sensor.initialize()
+            sensor.enable()
                 .then(() => resolve(sensor))
-                .catch((reason) => reject(reason));
+                .catch((error) => reject(error));
         });
     }
 
     /**
-     * Initializes the sensor.
+     * Enables the sensor.
      * 
      * @returns A `Promise` that resolves when the sensor has been initialized.
      */
-    public initialize(): Promise<void> {
+    public enable(): Promise<void> {
         return new Promise((resolve, reject) => {
-            this._checkI2cBusState(false)
-                .then(() => this._openBus())
-                .then(() => this._updateCommandRegister(this._commandRegister))
+            const commandRegister: CommandRegister = this._commandRegister.clone();
+            commandRegister.setShutdownMode(ShutdownMode.DISABLED);
+
+            this._checkState(SensorState.DISABLED)
+                .then(() => this._openI2cBus())
+                .then(() => this._updateCommandRegister(commandRegister))
                 .then(() => {
-                    this._isInitialized = true;
+                    this._state = SensorState.ENABLED;
                     resolve();
                 })
-                .catch((reason) => {
-                    reject(new SensorError('Failed to initialize sensor!', reason));
+                .catch((error) => {
+                    reject(new SensorError('Failed to enable the sensor.', error));
                 });
         });
     }
 
     /**
-     * Shuts down the sensor and frees up all resources.
+     * Disables the sensor.
      * 
      * @returns A `Promise` that resolves when the sensor has been shut down and all resources have been freed up.
      */
-    public destroy(): Promise<void> {
+    public disable(): Promise<void> {
         return new Promise((resolve, reject) => {
-            const commandRegister = new CommandRegister();
+            const commandRegister: CommandRegister = this._commandRegister.clone();
             commandRegister.setShutdownMode(ShutdownMode.ENABLED);
 
-            this._checkSensorState(true)
+            this._checkState(SensorState.ENABLED)
                 .then(() => this._updateCommandRegister(commandRegister))
-                .then(() => this._closeBus())
+                .then(() => this._closeI2cBus())
                 .then(() => {
-                    this._isInitialized = false;
+                    this._state = SensorState.DISABLED;
                     resolve();
                 })
-                .catch((reason) => {
-                    reject(new SensorError('Failed to destroy sensor!', reason));
+                .catch((error) => {
+                    reject(new SensorError('Failed to disable the sensor.', error));
                 });
         });
     }
@@ -169,12 +174,12 @@ export class Sensor {
      */
     public clearAckState(ignoreError: boolean = true): Promise<void> {
         return new Promise((resolve, reject) => {
-            this._checkI2cBusState(true)
+            this._checkI2cBusState(I2CBusState.OPENED)
                 .then(() => this._i2cBus?.i2cRead(I2CAddress.AR, 1, Buffer.alloc(1)))
                 .then(() => resolve())
-                .catch((reason) => {
+                .catch((error) => {
                     if (!ignoreError) {
-                        reject(new SensorError('Failed to clear ACK state!', reason));
+                        reject(new SensorError('Failed to clear the ACK state.', error));
                     } else {
                         resolve();
                     }
@@ -187,12 +192,12 @@ export class Sensor {
      * 
      * @param expectedState - The expected I2C bus state.
      * 
-     * @returns A `Promise` that resolves when the I2C bus is in the expected state.
+     * @returns A `Promise` that resolves when the state is as expected.
      */
-    private _checkI2cBusState(expectedState: boolean): Promise<void> {
+    private _checkI2cBusState(expectedState: I2CBusState): Promise<void> {
         return new Promise((resolve, reject) => {
-            if (expectedState !== this._isI2cBusOpen) {
-                reject(new I2CError('Invalid bus state!'));
+            if (expectedState !== this._i2cBusState) {
+                reject(new I2CError('Invalid bus state.'));
             } else {
                 resolve();
             }
@@ -200,16 +205,16 @@ export class Sensor {
     }
 
     /**
-     * Checks the sensor state.
+     * Checks the state.
      * 
-     * @param expectedState - The expected sensor state.
+     * @param expectedState - The expected state.
      * 
-     * @returns A `Promise` that resolves when the sensor is in the expected state.
+     * @returns A `Promise` that resolves when the state is as expected.
      */
-    private _checkSensorState(expectedState: boolean): Promise<void> {
+    private _checkState(expectedState: SensorState): Promise<void> {
         return new Promise((resolve, reject) => {
-            if (expectedState !== this._isInitialized) {
-                reject(new SensorError('Invalid sensor state!'));
+            if (expectedState !== this._state) {
+                reject(new SensorError('Invalid state.'));
             } else {
                 resolve();
             }
@@ -221,17 +226,17 @@ export class Sensor {
      * 
      * @returns A `Promise` that resolves when the I2C bus has been opened.
      */
-    private _openBus(): Promise<void> {
+    private _openI2cBus(): Promise<void> {
         return new Promise((resolve, reject) => {
-            this._checkI2cBusState(false)
+            this._checkI2cBusState(I2CBusState.CLOSED)
                 .then(() => openPromisified(this.i2cBusNr))
                 .then((i2cBus: PromisifiedBus) => {
                     this._i2cBus = i2cBus;
-                    this._isI2cBusOpen = true;
+                    this._i2cBusState = I2CBusState.OPENED;
                     resolve();
                 })
-                .catch((reason) => {
-                    reject(new SensorError('Failed to open I2C bus!', reason));
+                .catch((error) => {
+                    reject(new SensorError('Failed to open the I2C bus.', error));
                 });
         });
     }
@@ -241,17 +246,17 @@ export class Sensor {
      * 
      * @returns A `Promise` that resolves when the I2C bus has been closed.
      */
-    private _closeBus(): Promise<void> {
+    private _closeI2cBus(): Promise<void> {
         return new Promise((resolve, reject) => {
-            this._checkI2cBusState(true)
+            this._checkI2cBusState(I2CBusState.OPENED)
                 .then(() => this._i2cBus?.close())
                 .then(() => {
                     this._i2cBus = undefined;
-                    this._isI2cBusOpen = false;
+                    this._i2cBusState = I2CBusState.CLOSED;
                     resolve();
                 })
-                .catch((reason) => {
-                    reject(new SensorError('Failed to close I2C bus!', reason));
+                .catch((error) => {
+                    reject(new SensorError('Failed to close the I2C bus.', error));
                 });
         });
     }
@@ -271,8 +276,8 @@ export class Sensor {
                 .then(() => {
                     this._commandRegister.writeBits(commandRegister.readBits());
                     resolve();
-                }).catch((reason) => {
-                    reject(new SensorError('Failed to update the sensor\'s command register!', reason));    
+                }).catch((error) => {
+                    reject(new SensorError('Failed to update the sensor\'s command register.', error));    
                 });
         });
     }
