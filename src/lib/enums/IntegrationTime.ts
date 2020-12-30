@@ -3,7 +3,7 @@ export enum IntegrationTime {
     /**
      * 1⁄2T.
      */
-    IT_HALF_T = 0,
+    IT_HALF_T = 0.5,
 
     /**
      * 1T.
@@ -18,6 +18,6 @@ export enum IntegrationTime {
     /**
      * 4T.
      */
-    IT_4T = 3,
+    IT_4T = 4,
 
 }

@@ -170,24 +170,7 @@ export class Sensor {
      * @returns The refresh time in milliseconds.
      */
     public calculateRefreshTime(): number {
-        let multiplier: number = 1;
-
-        switch (this.getIntegrationTime()) {
-            case IntegrationTime.IT_HALF_T:
-                multiplier = 0.5;
-                break;
-            case IntegrationTime.IT_1T:
-                multiplier = 1;
-                break;
-            case IntegrationTime.IT_2T:
-                multiplier = 2;
-                break;
-            case IntegrationTime.IT_4T:
-                multiplier = 4;
-                break;
-        }
-
-        return ((125 / 300) * this.rSet) * multiplier;
+        return this.getIntegrationTime() * (this.rSet * (125 / 300));
     }
 
     /**
