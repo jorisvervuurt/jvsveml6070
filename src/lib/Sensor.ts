@@ -1,14 +1,25 @@
-import { BytesRead, openPromisified, PromisifiedBus } from 'i2c-bus';
-import { SensorValue } from './SensorValue';
+import {
+    BytesRead,
+    openPromisified,
+    PromisifiedBus,
+} from 'i2c-bus';
 import { CommandRegister } from './CommandRegister';
 import { I2CAddress } from './enums/I2CAddress';
 import { I2CBusState } from './enums/I2CBusState';
 import { IntegrationTime } from './enums/IntegrationTime';
 import { SensorState } from './enums/SensorState';
 import { ShutdownMode } from './enums/ShutdownMode';
+import { UvIndexRiskLevel } from './enums/UvIndexRiskLevel';
 import { I2CError } from './errors/I2CError';
 import { SensorError } from './errors/SensorError';
-import { delay } from './helpers';
+import {
+    calculateNormalizedValue,
+    calculateRefreshTime,
+    calculateUvIndex,
+    calculateUvIndexRiskLevel,
+    delay,
+} from './helpers';
+import { SensorValue } from './interfaces/SensorValue';
 
 export class Sensor {
 
@@ -166,16 +177,6 @@ export class Sensor {
     }
 
     /**
-     * Calculates the refresh time.
-     * The calculation is based on the integration time and RSET value.
-     * 
-     * @returns The refresh time in milliseconds.
-     */
-    public calculateRefreshTime(): number {
-        return this._calculateIntegrationTimeMultiplier() * (this.rSet * (125 / 300));
-    }
-
-    /**
      * Clears the ACK state.
      * 
      * @param ignoreError - A `boolean` value that determines whether the returned `Promise` resolves even on error.
@@ -207,15 +208,23 @@ export class Sensor {
     public read(): Promise<SensorValue> {
         return new Promise((resolve, reject) => {
             this._checkState(SensorState.ENABLED)
-                .then(() => delay(this.calculateRefreshTime()))
+                .then(() => delay(calculateRefreshTime(this.rSet, this.getIntegrationTime())))
                 .then(() => {
                     this._i2cBus?.i2cRead(I2CAddress.DATA_MSB, 1, Buffer.alloc(1)).then((msb: BytesRead) => {
                         this._i2cBus?.i2cRead(I2CAddress.DATA_LSB, 1, Buffer.alloc(1)).then((lsb: BytesRead) => {
-                            const rawValue: number = ((msb.buffer[0] << 8) | lsb.buffer[0]),
-                                normalizedValue: number = (rawValue / this._calculateIntegrationTimeMultiplier()),
-                                value: SensorValue = new SensorValue(rawValue, normalizedValue);
-
-                            resolve(value);
+                            const rawValue: number = (msb.buffer[0] << 8) | lsb.buffer[0],
+                                normalizedValue: number = calculateNormalizedValue(rawValue, this.getIntegrationTime()),
+                                uvIndex: number = calculateUvIndex(this.rSet, normalizedValue),
+                                uvIndexRiskLevel: UvIndexRiskLevel = calculateUvIndexRiskLevel(uvIndex);
+                            
+                            resolve({
+                                rawValue: rawValue,
+                                normalizedValue: normalizedValue,
+                                uvIndex: {
+                                    value: uvIndex,
+                                    riskLevel: uvIndexRiskLevel,
+                                },
+                            });
                         });
                     });
                 })
@@ -236,23 +245,6 @@ export class Sensor {
         return new Promise((resolve, reject) => {
             if (expectedState !== this._i2cBusState) {
                 reject(new I2CError('Invalid bus state.'));
-            } else {
-                resolve();
-            }
-        });
-    }
-
-    /**
-     * Checks the state.
-     * 
-     * @param expectedState - The expected state.
-     * 
-     * @returns A `Promise` that resolves when the state is as expected.
-     */
-    private _checkState(expectedState: SensorState): Promise<void> {
-        return new Promise((resolve, reject) => {
-            if (expectedState !== this._state) {
-                reject(new SensorError('Invalid state.'));
             } else {
                 resolve();
             }
@@ -300,29 +292,20 @@ export class Sensor {
     }
 
     /**
-     * Calculates the integration time multiplier.
+     * Checks the state.
      * 
-     * @returns The integration time multiplier.
+     * @param expectedState - The expected state.
+     * 
+     * @returns A `Promise` that resolves when the state is as expected.
      */
-    private _calculateIntegrationTimeMultiplier(): number {
-        let multiplier: number = 1;
-
-        switch (this.getIntegrationTime()) {
-            case IntegrationTime.IT_HALF_T:
-                multiplier = 0.5;
-                break;
-            case IntegrationTime.IT_1T:
-                multiplier = 1;
-                break;
-            case IntegrationTime.IT_2T:
-                multiplier = 2;
-                break;
-            case IntegrationTime.IT_4T:
-                multiplier = 4;
-                break;
-        }
-
-        return multiplier;
+    private _checkState(expectedState: SensorState): Promise<void> {
+        return new Promise((resolve, reject) => {
+            if (expectedState !== this._state) {
+                reject(new SensorError('Invalid state.'));
+            } else {
+                resolve();
+            }
+        });
     }
 
     /**
