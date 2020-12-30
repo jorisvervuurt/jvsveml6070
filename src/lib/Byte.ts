@@ -77,11 +77,11 @@ export class Byte {
      */
     public writeBit(index: number, value: number): void {
         if (0 > index || 7 < index) {
-            throw new LogicError(`Invalid bit index provided! ${index} provided, expected a value from 0 to 7.`);
+            throw new LogicError(`Invalid bit index provided. ${index} provided, expected a value from 0 to 7.`);
         }
 
         if (0 > value || 1 < value) {
-            throw new LogicError(`Invalid bit value provided! ${value} provided, expected 0 or 1.`);
+            throw new LogicError(`Invalid bit value provided. ${value} provided, expected 0 or 1.`);
         }
 
         if (0 === value) {
@@ -101,7 +101,7 @@ export class Byte {
      */
     public writeBits(bits: Map<number, number>): void {
         if (8 < bits.size) {
-            throw new LogicError(`Too many bit values provided! ${bits.size} provided, expected a maximum of 8.`);
+            throw new LogicError(`Too many bit values provided. ${bits.size} provided, expected a maximum of 8.`);
         }
 
         for (const [index, value] of bits.entries()) {

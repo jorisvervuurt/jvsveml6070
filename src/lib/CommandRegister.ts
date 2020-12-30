@@ -78,7 +78,7 @@ export class CommandRegister extends Byte {
     public setShutdownMode(shutdownMode: ShutdownMode): void {
         if (!Number.isInteger(shutdownMode) || !Object.values(ShutdownMode).includes(shutdownMode)) {
             // eslint-disable-next-line max-len
-            throw new CommandRegisterError(`Invalid shutdown mode provided! ${shutdownMode} provided, expected a valid \`ShutdownMode\` enum value.`);
+            throw new CommandRegisterError(`Invalid shutdown mode provided. ${shutdownMode} provided, expected a valid \`ShutdownMode\` enum value.`);
         }
 
         this.writeBit(CommandRegisterBit.SD, shutdownMode);
@@ -114,7 +114,7 @@ export class CommandRegister extends Byte {
     public setIntegrationTime(integrationTime: IntegrationTime): void {
         if (!Number.isInteger(integrationTime) || !Object.values(IntegrationTime).includes(integrationTime)) {
             // eslint-disable-next-line max-len
-            throw new CommandRegisterError(`Invalid integration time provided! ${integrationTime} provided, expected a valid \`IntegrationTime\` enum value.`);
+            throw new CommandRegisterError(`Invalid integration time provided. ${integrationTime} provided, expected a valid \`IntegrationTime\` enum value.`);
         }
 
         let firstBitValue: number = this.readBit(CommandRegisterBit.IT_0),
