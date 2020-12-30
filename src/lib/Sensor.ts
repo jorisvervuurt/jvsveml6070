@@ -164,6 +164,33 @@ export class Sensor {
     }
 
     /**
+     * Calculates the refresh time.
+     * The calculation is based on the integration time and RSET value.
+     * 
+     * @returns The refresh time in milliseconds.
+     */
+    public calculateRefreshTime(): number {
+        let multiplier: number = 1;
+
+        switch (this.getIntegrationTime()) {
+            case IntegrationTime.IT_HALF_T:
+                multiplier = 0.5;
+                break;
+            case IntegrationTime.IT_1T:
+                multiplier = 1;
+                break;
+            case IntegrationTime.IT_2T:
+                multiplier = 2;
+                break;
+            case IntegrationTime.IT_4T:
+                multiplier = 4;
+                break;
+        }
+
+        return ((125 / 300) * this.rSet) * multiplier;
+    }
+
+    /**
      * Clears the ACK state.
      * 
      * @param ignoreError - A `boolean` value that determines whether the returned `Promise` resolves even on error.
