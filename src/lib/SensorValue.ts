@@ -6,12 +6,20 @@ export class SensorValue {
     public readonly rawValue: number;
 
     /**
+     * The normalized value.
+     * This is the raw value divided by the integration time multiplier, resulting in the average sample value.
+     */
+    public readonly normalizedValue: number;
+
+    /**
      * Creates a new `SensorValue` instance.
      * 
      * @param rawValue - The raw value.
+     * @param normalizedValue - The normalized value.
      */
-    constructor(rawValue: number) {
+    constructor(rawValue: number, normalizedValue: number) {
         this.rawValue = rawValue;
+        this.normalizedValue = normalizedValue;
     }
 
     /**

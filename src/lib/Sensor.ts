@@ -211,8 +211,11 @@ export class Sensor {
                 .then(() => {
                     this._i2cBus?.i2cRead(I2CAddress.DATA_MSB, 1, Buffer.alloc(1)).then((msb: BytesRead) => {
                         this._i2cBus?.i2cRead(I2CAddress.DATA_LSB, 1, Buffer.alloc(1)).then((lsb: BytesRead) => {
-                            const rawValue: number = msb.buffer[0] << 8 | lsb.buffer[0];
-                            resolve(new SensorValue(rawValue));
+                            const rawValue: number = ((msb.buffer[0] << 8) | lsb.buffer[0]),
+                                normalizedValue: number = (rawValue / this.getIntegrationTime()),
+                                value: SensorValue = new SensorValue(rawValue, normalizedValue);
+
+                            resolve(value);
                         });
                     });
                 })
