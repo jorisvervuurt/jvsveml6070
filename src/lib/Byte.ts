@@ -20,9 +20,11 @@ export class Byte {
      * Creates a new `Byte` instance from the values of one or more bits.
      * 
      * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
+     * 
+     * @returns The created `Byte` instance.
      */
     public static fromBits(bits: Map<number, number>): Byte {
-        const byte: Byte = new Byte();
+        const byte = new Byte();
         byte.writeBits(bits);
 
         return byte;
@@ -32,10 +34,12 @@ export class Byte {
      * Creates a new `Byte` instance from a hexadecimal value.
      * 
      * @param hex - A hexadecimal value, e.g. `0x01` (binary `00000001`).
+     * 
+     * @returns The created `Byte` instance.
      */
     public static fromHex(hex: number): Byte {
-        const buffer: Buffer = Buffer.from([hex]),
-            byte: Byte = new Byte(buffer);
+        const buffer = Buffer.from([hex]),
+            byte = new Byte(buffer);
 
         return byte;
     }
@@ -57,7 +61,7 @@ export class Byte {
      * @returns A map of bit values keyed by the bit index (in binary order, right to left).
      */
     public readBits(): Map<number, number> {
-        const bits: Map<number, number> = new Map();
+        const bits = new Map<number, number>();
 
         for (let index = 0; index < 8; index++) {
             bits.set(index, this.readBit(index));

@@ -1,25 +1,15 @@
-import {
-    BytesRead,
-    openPromisified,
-    PromisifiedBus,
-} from 'i2c-bus';
+import { openPromisified, PromisifiedBus } from 'i2c-bus';
 import { CommandRegister } from './CommandRegister';
 import { I2CAddress } from './enums/I2CAddress';
 import { I2CBusState } from './enums/I2CBusState';
-import { IntegrationTime } from './enums/IntegrationTime';
 import { SensorState } from './enums/SensorState';
 import { ShutdownMode } from './enums/ShutdownMode';
-import { UvIndexRiskLevel } from './enums/UvIndexRiskLevel';
 import { I2CError } from './errors/I2CError';
 import { SensorError } from './errors/SensorError';
-import {
-    calculateNormalizedValue,
-    calculateRefreshTime,
-    calculateUvIndex,
-    calculateUvIndexRiskLevel,
-    delay,
-} from './helpers';
-import { SensorValue } from './interfaces/SensorValue';
+import { IntegrationTime } from './IntegrationTime';
+import { IntegrationTime as IntegrationTimeEnum } from './enums/IntegrationTime';
+import { SensorValue } from './SensorValue';
+import { delay } from './helpers';
 
 export class Sensor {
 
@@ -70,12 +60,12 @@ export class Sensor {
     }
 
     /**
-     * Initializes the sensor.
+     * Creates a new `Sensor` instance and enables the sensor.
      * 
      * @param i2cBusNr - The I2C bus number. Defaults to 1.
      * @param rSet - The RSET value (in kΩ), which is used to determine the sensor's refresh time. Defaults to 270 kΩ.
      * 
-     * @returns A `Promise` that resolves when the sensor has been initialized.
+     * @returns A `Promise` that resolves when the sensor has been enabled.
      */
     public static initialize(i2cBusNr: number = 1, rSet: number = 270): Promise<Sensor> {
         return new Promise((resolve, reject) => {
@@ -93,7 +83,7 @@ export class Sensor {
      */
     public enable(): Promise<void> {
         return new Promise((resolve, reject) => {
-            const commandRegister: CommandRegister = this._commandRegister.clone();
+            const commandRegister = this._commandRegister.clone();
             commandRegister.setShutdownMode(ShutdownMode.DISABLED);
 
             this._checkState(SensorState.DISABLED)
@@ -116,7 +106,7 @@ export class Sensor {
      */
     public disable(): Promise<void> {
         return new Promise((resolve, reject) => {
-            const commandRegister: CommandRegister = this._commandRegister.clone();
+            const commandRegister = this._commandRegister.clone();
             commandRegister.setShutdownMode(ShutdownMode.ENABLED);
 
             this._checkState(SensorState.ENABLED)
@@ -144,10 +134,12 @@ export class Sensor {
     /**
      * Sets the shutdown mode.
      * 
+     * @param shutdownMode - The shutdown mode enumeration value.
+     * 
      * @returns A `Promise` that resolves when the shutdown mode has been set.
      */
     public setShutdownMode(shutdownMode: ShutdownMode): Promise<void> {
-        const commandRegister: CommandRegister = this._commandRegister.clone();
+        const commandRegister = this._commandRegister.clone();
         commandRegister.setShutdownMode(shutdownMode);
 
         return this._updateCommandRegister(commandRegister);
@@ -159,21 +151,31 @@ export class Sensor {
      * @returns The integration time.
      */
     public getIntegrationTime(): IntegrationTime {
-        return this._commandRegister.getIntegrationTime();
+        return new IntegrationTime(this._commandRegister.getIntegrationTime());
     }
 
     /**
      * Sets the integration time.
      * 
-     * @param integrationTime - The integration time.
+     * @param integrationTime - The integration time enumeration value.
      * 
      * @returns A `Promise` that resolves when the integration time has been set.
      */
-    public setIntegrationTime(integrationTime: IntegrationTime): Promise<void> {
-        const commandRegister: CommandRegister = this._commandRegister.clone();
+    public setIntegrationTime(integrationTime: IntegrationTimeEnum): Promise<void> {
+        const commandRegister = this._commandRegister.clone();
         commandRegister.setIntegrationTime(integrationTime);
 
         return this._updateCommandRegister(commandRegister);
+    }
+
+    /**
+     * Retrieves the refresh time.
+     * 
+     * @returns The refresh time in milliseconds.
+     */
+    public getRefreshTime(): number {
+        const integrationTime = this.getIntegrationTime();
+        return integrationTime.multiplier * (this.rSet * (125 / 300));
     }
 
     /**
@@ -208,23 +210,14 @@ export class Sensor {
     public read(): Promise<SensorValue> {
         return new Promise((resolve, reject) => {
             this._checkState(SensorState.ENABLED)
-                .then(() => delay(calculateRefreshTime(this.rSet, this.getIntegrationTime())))
+                .then(() => delay(this.getRefreshTime()))
                 .then(() => {
-                    this._i2cBus?.i2cRead(I2CAddress.DATA_MSB, 1, Buffer.alloc(1)).then((msb: BytesRead) => {
-                        this._i2cBus?.i2cRead(I2CAddress.DATA_LSB, 1, Buffer.alloc(1)).then((lsb: BytesRead) => {
-                            const rawValue: number = (msb.buffer[0] << 8) | lsb.buffer[0],
-                                normalizedValue: number = calculateNormalizedValue(rawValue, this.getIntegrationTime()),
-                                uvIndex: number = calculateUvIndex(this.rSet, normalizedValue),
-                                uvIndexRiskLevel: UvIndexRiskLevel = calculateUvIndexRiskLevel(uvIndex);
-                            
-                            resolve({
-                                rawValue: rawValue,
-                                normalizedValue: normalizedValue,
-                                uvIndex: {
-                                    value: uvIndex,
-                                    riskLevel: uvIndexRiskLevel,
-                                },
-                            });
+                    this._i2cBus?.i2cRead(I2CAddress.DATA_MSB, 1, Buffer.alloc(1)).then((msb) => {
+                        this._i2cBus?.i2cRead(I2CAddress.DATA_LSB, 1, Buffer.alloc(1)).then((lsb) => {
+                            const rawValue = (msb.buffer[0] << 8) | lsb.buffer[0],
+                                sensorValue = SensorValue.fromRawValue(this.rSet, this.getIntegrationTime(), rawValue);
+
+                            resolve(sensorValue);
                         });
                     });
                 })
@@ -260,7 +253,7 @@ export class Sensor {
         return new Promise((resolve, reject) => {
             this._checkI2cBusState(I2CBusState.CLOSED)
                 .then(() => openPromisified(this.i2cBusNr))
-                .then((i2cBus: PromisifiedBus) => {
+                .then((i2cBus) => {
                     this._i2cBus = i2cBus;
                     this._i2cBusState = I2CBusState.OPENED;
                     resolve();

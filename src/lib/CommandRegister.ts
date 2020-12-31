@@ -41,9 +41,11 @@ export class CommandRegister extends Byte {
      * @see {@link https://www.vishay.com/docs/84277/veml6070.pdf|Vishay VEML6070 datasheet}, pages 6 to 8.
      * 
      * @param bits - A map of bit values keyed by the bit index (in binary order, right to left).
+     * 
+     * @returns The created `CommandRegister` instance.
      */
     public static fromBits(bits: Map<number, number>): CommandRegister {
-        const commandRegister: CommandRegister = new CommandRegister();
+        const commandRegister = new CommandRegister();
         commandRegister.writeBits(bits);
 
         return commandRegister;
@@ -53,10 +55,12 @@ export class CommandRegister extends Byte {
      * Creates a new `CommandRegister` instance from a hexadecimal value.
      * 
      * @param hex - A hexadecimal value, e.g. `0x01` (binary `00000001`).
+     * 
+     * @returns The created `CommandRegister` instance.
      */
     public static fromHex(hex: number): Byte {
-        const buffer: Buffer = Buffer.from([hex]),
-            commandRegister: CommandRegister = new CommandRegister(buffer);
+        const buffer = Buffer.from([hex]),
+            commandRegister = new CommandRegister(buffer);
 
         return commandRegister;
     }
@@ -64,7 +68,7 @@ export class CommandRegister extends Byte {
     /**
      * Retrieves the shutdown mode.
      * 
-     * @returns The shutdown mode.
+     * @returns The shutdown mode enumeration value.
      */
     public getShutdownMode(): ShutdownMode {
         return this.readBit(CommandRegisterBit.SD);
@@ -73,7 +77,7 @@ export class CommandRegister extends Byte {
     /**
      * Sets the shutdown mode.
      * 
-     * @param shutdownMode - The shutdown mode.
+     * @param shutdownMode - The shutdown mode enumeration value.
      */
     public setShutdownMode(shutdownMode: ShutdownMode): void {
         if (!Number.isInteger(shutdownMode) || !Object.values(ShutdownMode).includes(shutdownMode)) {
@@ -87,11 +91,11 @@ export class CommandRegister extends Byte {
     /**
      * Retrieves the integration time.
      * 
-     * @returns The integration time.
+     * @returns The integration time enumeration value.
      */
     public getIntegrationTime(): IntegrationTime {
-        const firstBitValue: number = this.readBit(CommandRegisterBit.IT_0),
-            secondBitValue: number = this.readBit(CommandRegisterBit.IT_1);
+        const firstBitValue = this.readBit(CommandRegisterBit.IT_0),
+            secondBitValue = this.readBit(CommandRegisterBit.IT_1);
 
         if (0 === firstBitValue && 0 === secondBitValue) {
             return IntegrationTime.IT_HALF_T;
@@ -109,7 +113,7 @@ export class CommandRegister extends Byte {
     /**
      * Sets the integration time.
      * 
-     * @param integrationTime - The integration time.
+     * @param integrationTime - The integration time enumeration value.
      */
     public setIntegrationTime(integrationTime: IntegrationTime): void {
         if (!Number.isInteger(integrationTime) || !Object.values(IntegrationTime).includes(integrationTime)) {
@@ -117,8 +121,8 @@ export class CommandRegister extends Byte {
             throw new CommandRegisterError(`Invalid integration time provided. ${integrationTime} provided, expected a valid \`IntegrationTime\` enum value.`);
         }
 
-        let firstBitValue: number = this.readBit(CommandRegisterBit.IT_0),
-            secondBitValue: number = this.readBit(CommandRegisterBit.IT_1);
+        let firstBitValue = this.readBit(CommandRegisterBit.IT_0),
+            secondBitValue = this.readBit(CommandRegisterBit.IT_1);
 
         switch (integrationTime) {
             case IntegrationTime.IT_HALF_T:
