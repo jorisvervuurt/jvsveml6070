@@ -18,8 +18,8 @@
         "dist/**/*"
     ],
     "scripts": {
-        "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
-        "format": "npx eslint . --fix --ext .js,.jsx,.ts,.tsx",
+        "lint": "npx eslint . --ext .ts",
+        "format": "npx eslint . --fix --ext .ts",
         "build": "rm -rf dist && npx tsc"
     },
     "author": "Joris Vervuurt Software <developer@joris-vervuurt.com> (https://www.joris-vervuurt.com)",
