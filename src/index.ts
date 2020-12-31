@@ -4,6 +4,7 @@ export { Sensor } from './lib/Sensor';
 // Export enums.
 export { IntegrationTime } from './lib/enums/IntegrationTime';
 export { ShutdownMode } from './lib/enums/ShutdownMode';
+export { UvIndexRiskLevel } from './lib/enums/UvIndexRiskLevel';
 
 // Export errors.
 export { CommandRegisterError } from './lib/errors/CommandRegisterError';
