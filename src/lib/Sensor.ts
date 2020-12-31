@@ -77,6 +77,24 @@ export class Sensor {
     }
 
     /**
+     * Retrieves the I2C bus state.
+     * 
+     * @returns The `I2CBusState` enumeration value.
+     */
+    public getI2cBusState(): I2CBusState {
+        return this._i2cBusState;
+    }
+
+    /**
+     * Retrieves the sensor's state.
+     * 
+     * @returns The `SensorState` enumeration value.
+     */
+    public getState(): SensorState {
+        return this._state;
+    }
+
+    /**
      * Enables the sensor.
      * 
      * @returns A `Promise` that resolves when the sensor has been initialized.
@@ -125,7 +143,7 @@ export class Sensor {
     /**
      * Retrieves the shutdown mode.
      * 
-     * @returns The shutdown mode.
+     * @returns The `ShutdownMode` enumeration value.
      */
     public getShutdownMode(): ShutdownMode {
         return this._commandRegister.getShutdownMode();
@@ -134,7 +152,7 @@ export class Sensor {
     /**
      * Sets the shutdown mode.
      * 
-     * @param shutdownMode - The shutdown mode enumeration value.
+     * @param shutdownMode - A `ShutdownMode` enumeration value.
      * 
      * @returns A `Promise` that resolves when the shutdown mode has been set.
      */
@@ -148,7 +166,7 @@ export class Sensor {
     /**
      * Retrieves the integration time.
      * 
-     * @returns The integration time.
+     * @returns An `IntegrationTime` instance.
      */
     public getIntegrationTime(): IntegrationTime {
         return new IntegrationTime(this._commandRegister.getIntegrationTime());
@@ -157,7 +175,7 @@ export class Sensor {
     /**
      * Sets the integration time.
      * 
-     * @param integrationTime - The integration time enumeration value.
+     * @param integrationTime - An `IntegrationTime` enumeration value.
      * 
      * @returns A `Promise` that resolves when the integration time has been set.
      */
@@ -230,13 +248,13 @@ export class Sensor {
     /**
      * Checks the I2C bus state.
      * 
-     * @param expectedState - The expected I2C bus state.
+     * @param expectedState - The expected `I2CBusState` enumeration value.
      * 
      * @returns A `Promise` that resolves when the state is as expected.
      */
     private _checkI2cBusState(expectedState: I2CBusState): Promise<void> {
         return new Promise((resolve, reject) => {
-            if (expectedState !== this._i2cBusState) {
+            if (expectedState !== this.getI2cBusState()) {
                 reject(new I2CError('Invalid bus state.'));
             } else {
                 resolve();
@@ -285,15 +303,15 @@ export class Sensor {
     }
 
     /**
-     * Checks the state.
+     * Checks the sensor's state.
      * 
-     * @param expectedState - The expected state.
+     * @param expectedState - The expected `SensorState` enumeration value.
      * 
      * @returns A `Promise` that resolves when the state is as expected.
      */
     private _checkState(expectedState: SensorState): Promise<void> {
         return new Promise((resolve, reject) => {
-            if (expectedState !== this._state) {
+            if (expectedState !== this.getState()) {
                 reject(new SensorError('Invalid state.'));
             } else {
                 resolve();
