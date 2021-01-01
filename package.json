@@ -1,7 +1,7 @@
 {
     "name": "jvsveml6070",
     "version": "1.0.0",
-    "description": "Node.js module for the Vishay VEML6070 UVA Light Sensor, written in TypeScript.",
+    "description": "Node.js package for the Vishay VEML6070 UVA Light Sensor, written in TypeScript.",
     "keywords": [
         "vishay",
         "veml6070",
