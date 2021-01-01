@@ -1,4 +1,4 @@
-import { UvIndexRiskLevel } from './enums/UvIndexRiskLevel';
+import { UvIndexRiskLevel } from './enums/module';
 
 export class UvIndex {
     

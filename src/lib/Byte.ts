@@ -1,4 +1,4 @@
-import { LogicError } from './errors/LogicError';
+import { LogicError } from './errors/module';
 
 export class Byte {
     

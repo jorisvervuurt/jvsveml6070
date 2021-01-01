@@ -1,14 +1,15 @@
 import { openPromisified, PromisifiedBus } from 'i2c-bus';
-import { CommandRegister } from './CommandRegister';
-import { I2CAddress } from './enums/I2CAddress';
-import { I2CBusState } from './enums/I2CBusState';
-import { SensorState } from './enums/SensorState';
-import { ShutdownMode } from './enums/ShutdownMode';
-import { I2CError } from './errors/I2CError';
-import { SensorError } from './errors/SensorError';
-import { IntegrationTime } from './IntegrationTime';
-import { IntegrationTime as IntegrationTimeEnum } from './enums/IntegrationTime';
-import { SensorValue } from './SensorValue';
+import { CommandRegister, IntegrationTime, SensorValue } from './module';
+import {
+    I2CAddress,
+    I2CBusState,
+    SensorState,
+    ShutdownMode,
+    IntegrationTime as IntegrationTimeEnum,
+    AcknowledgeMode,
+    AcknowledgeThreshold,
+} from './enums/module';
+import { I2CError, SensorError } from './errors/module';
 import { delay } from './helpers';
 
 export class Sensor {
@@ -194,6 +195,68 @@ export class Sensor {
     public getRefreshTime(): number {
         const integrationTime = this.getIntegrationTime();
         return integrationTime.multiplier * (this.rSet * (125 / 300));
+    }
+
+    /**
+     * Retrieves the acknowledge mode.
+     * 
+     * @returns The `AcknowledgeMode` enumeration value.
+     */
+    public getAcknowledgeMode(): AcknowledgeMode {
+        return this._commandRegister.getAcknowledgeMode();
+    }
+
+    /**
+     * Sets the acknowledge mode.
+     * 
+     * @param ackMode - An `AcknowledgeMode` enumeration value.
+     * 
+     * @returns A `Promise` that resolves when the acknowledge mode has been set.
+     */
+    public setAcknowledgeMode(ackMode: AcknowledgeMode): Promise<void> {
+        return this.setAcknowledge(ackMode, undefined);
+    }
+    
+    /**
+     * Retrieves the acknowledge threshold.
+     * 
+     * @returns The `AcknowledgeThreshold` enumeration value.
+     */
+    public getAcknowledgeThreshold(): AcknowledgeThreshold {
+        return this._commandRegister.getAcknowledgeThreshold();
+    }
+
+    /**
+     * Sets the acknowledge threshold.
+     * 
+     * @param ackThreshold - An `AcknowledgeThreshold` enumeration value.
+     * 
+     * @returns A `Promise` that resolves when the acknowledge threshold has been set.
+     */
+    public setAcknowledgeThreshold(ackThreshold: AcknowledgeThreshold): Promise<void> {
+        return this.setAcknowledge(undefined, ackThreshold);
+    }
+
+    /**
+      * Sets the acknowledge mode and/or threshold.
+      * 
+      * @param ackMode - An optional `AcknowledgeMode` enumeration value.
+      * @param ackThreshold - An optional `AcknowledgeThreshold` enumeration value.
+      * 
+      * @returns A `Promise` that resolves when the acknowledge mode and/or threshold have been set.
+      */
+    public setAcknowledge(ackMode?: AcknowledgeMode, ackThreshold?: AcknowledgeThreshold): Promise<void> {
+        const commandRegister = this._commandRegister.clone();
+
+        if (undefined !== ackMode) {
+            commandRegister.setAcknowledgeMode(ackMode);
+        }
+
+        if (undefined !== ackThreshold) {
+            commandRegister.setAcknowledgeThreshold(ackThreshold);
+        }
+
+        return this._updateCommandRegister(commandRegister);
     }
 
     /**

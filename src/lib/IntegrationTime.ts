@@ -1,4 +1,4 @@
-import { IntegrationTime as IntegrationTimeEnum } from './enums/IntegrationTime';
+import { IntegrationTime as IntegrationTimeEnum } from './enums/module';
 
 export class IntegrationTime {
     

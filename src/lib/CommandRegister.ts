@@ -1,8 +1,12 @@
-import { Byte } from './Byte';
-import { CommandRegisterBit } from './enums/CommandRegisterBit';
-import { IntegrationTime } from './enums/IntegrationTime';
-import { ShutdownMode } from './enums/ShutdownMode';
-import { CommandRegisterError } from './errors/CommandRegisterError';
+import { Byte } from './module';
+import {
+    CommandRegisterBit,
+    AcknowledgeMode,
+    AcknowledgeThreshold,
+    IntegrationTime,
+    ShutdownMode,
+} from './enums/module';
+import { CommandRegisterError } from './errors/module';
 
 export class CommandRegister extends Byte {
 
@@ -68,7 +72,7 @@ export class CommandRegister extends Byte {
     /**
      * Retrieves the shutdown mode.
      * 
-     * @returns The shutdown mode enumeration value.
+     * @returns The `ShutdownMode` enumeration value.
      */
     public getShutdownMode(): ShutdownMode {
         return this.readBit(CommandRegisterBit.SD);
@@ -77,7 +81,7 @@ export class CommandRegister extends Byte {
     /**
      * Sets the shutdown mode.
      * 
-     * @param shutdownMode - The shutdown mode enumeration value.
+     * @param shutdownMode - The `ShutdownMode` enumeration value.
      */
     public setShutdownMode(shutdownMode: ShutdownMode): void {
         if (!Number.isInteger(shutdownMode) || !Object.values(ShutdownMode).includes(shutdownMode)) {
@@ -91,7 +95,7 @@ export class CommandRegister extends Byte {
     /**
      * Retrieves the integration time.
      * 
-     * @returns The integration time enumeration value.
+     * @returns The `IntegrationTime` enumeration value.
      */
     public getIntegrationTime(): IntegrationTime {
         const firstBitValue = this.readBit(CommandRegisterBit.IT_0),
@@ -113,7 +117,7 @@ export class CommandRegister extends Byte {
     /**
      * Sets the integration time.
      * 
-     * @param integrationTime - The integration time enumeration value.
+     * @param integrationTime - The `IntegrationTime` enumeration value.
      */
     public setIntegrationTime(integrationTime: IntegrationTime): void {
         if (!Number.isInteger(integrationTime) || !Object.values(IntegrationTime).includes(integrationTime)) {
@@ -147,6 +151,52 @@ export class CommandRegister extends Byte {
             [CommandRegisterBit.IT_0, firstBitValue],
             [CommandRegisterBit.IT_1, secondBitValue],
         ]));
+    }
+
+    /**
+     * Retrieves the acknowledge mode.
+     * 
+     * @returns The `AcknowledgeMode` enumeration value.
+     */
+    public getAcknowledgeMode(): AcknowledgeMode {
+        return this.readBit(CommandRegisterBit.ACK);
+    }
+
+    /**
+     * Sets the acknowledge mode.
+     * 
+     * @param ackMode - The `AcknowledgeMode` enumeration value.
+     */
+    public setAcknowledgeMode(ackMode: AcknowledgeMode): void {
+        if (!Number.isInteger(ackMode) || !Object.values(AcknowledgeMode).includes(ackMode)) {
+            // eslint-disable-next-line max-len
+            throw new CommandRegisterError(`Invalid acknowledge mode provided. ${ackMode} provided, expected a valid \`AcknowledgeMode\` enum value.`);
+        }
+
+        this.writeBit(CommandRegisterBit.ACK, ackMode);
+    }
+
+    /**
+     * Retrieves the acknowledge threshold.
+     * 
+     * @returns The `AcknowledgeThreshold` enumeration value.
+     */
+    public getAcknowledgeThreshold(): AcknowledgeThreshold {
+        return this.readBit(CommandRegisterBit.ACK_THD);
+    }
+
+    /**
+     * Sets the acknowledge threshold.
+     * 
+     * @param ackThreshold - The `AcknowledgeThreshold` enumeration value.
+     */
+    public setAcknowledgeThreshold(ackThreshold: AcknowledgeThreshold): void {
+        if (!Number.isInteger(ackThreshold) || !Object.values(AcknowledgeThreshold).includes(ackThreshold)) {
+            // eslint-disable-next-line max-len
+            throw new CommandRegisterError(`Invalid acknowledge threshold provided. ${ackThreshold} provided, expected a valid \`AcknowledgeThreshold\` enum value.`);
+        }
+
+        this.writeBit(CommandRegisterBit.ACK_THD, ackThreshold);
     }
 
     /**

@@ -1,5 +1,4 @@
-import { IntegrationTime } from './IntegrationTime';
-import { UvIndex } from './UvIndex';
+import { IntegrationTime, UvIndex } from './module';
 
 export class SensorValue {
 

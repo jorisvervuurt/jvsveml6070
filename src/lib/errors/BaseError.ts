@@ -1,7 +1,7 @@
 export abstract class BaseError extends Error {
 
     /**
-     * The parent `Error` instance. Optional.
+     * An optional parent `Error` instance.
      */
     public parentError?: Error;
 
@@ -9,7 +9,7 @@ export abstract class BaseError extends Error {
      * Creates a new `BaseError` instance.
      * 
      * @param message - The error message.
-     * @param parentError - The parent error (can be either an `Error` instance or a string). Optional.
+     * @param parentError - An optional parent error (can be either an `Error` instance or a string).
      */
     constructor(message: string, parentError?: Error | string) {
         super(message);

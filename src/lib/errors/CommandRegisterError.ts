@@ -1,4 +1,4 @@
-import { BaseError } from './BaseError';
+import { BaseError } from './module';
 
 export class CommandRegisterError extends BaseError {
 
