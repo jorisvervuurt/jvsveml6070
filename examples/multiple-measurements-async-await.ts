@@ -1,4 +1,4 @@
-import { Sensor, Helpers, SensorValue, Enums } from 'jvsveml6070';
+import { Sensor, SensorValue, Enums, Helpers } from 'jvsveml6070';
 
 async function readMultiple() {
     try {
