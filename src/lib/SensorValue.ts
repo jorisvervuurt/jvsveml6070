@@ -10,7 +10,7 @@ export class SensorValue {
 
     /**
      * The normalized value.
-     * This is the raw value divided by the integration time multiplier, resulting in the average sample value.
+     * This is the raw value divided by the integration time multiplier, resulting in the 1T value.
      */
     public readonly normalizedValue: number;
 

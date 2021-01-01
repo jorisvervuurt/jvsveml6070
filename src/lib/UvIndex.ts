@@ -21,7 +21,8 @@ export class UvIndex {
      * 
      * @param rSet - The RSET value (in kΩ).
      * @param normalizedValue - The normalized value.
-     *                          This is the raw value divided by the integration time multiplier.
+     *                          This is the raw value divided by the integration time multiplier, resulting in the 1T 
+     *                          value.
      * 
      * @returns The created `UvIndex` instance.
      */
