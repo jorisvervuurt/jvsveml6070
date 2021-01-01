@@ -1,6 +1,6 @@
 {
     "name": "jvsveml6070",
-    "version": "0.0.9",
+    "version": "1.0.0",
     "description": "Node.js module for the Vishay VEML6070 UVA Light Sensor, written in TypeScript.",
     "keywords": [
         "vishay",
@@ -19,7 +19,8 @@
     ],
     "scripts": {
         "lint": "npx eslint . --ext .ts",
-        "format": "npx eslint . --fix --ext .ts",
+        "lint-fix": "npx eslint . --fix --ext .ts",
+        "docs": "rm -rf docs && npx typedoc",
         "build": "rm -rf dist && npx tsc"
     },
     "author": "Joris Vervuurt Software <developer@joris-vervuurt.com> (https://www.joris-vervuurt.com)",
@@ -42,6 +43,7 @@
         "@typescript-eslint/parser": "^4.11.1",
         "eslint": "^7.16.0",
         "eslint-plugin-tsdoc": "^0.2.10",
+        "typedoc": "^0.20.7",
         "typescript": "^4.1.3"
     }
 }

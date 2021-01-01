@@ -11,5 +11,14 @@
     "exclude": [
         "node_modules",
         "**/*.spec.ts"
-    ]
+    ],
+    "typedocOptions": {
+        "name": "JVSVEML6070",
+        "includeVersion": true,
+        "readme": "README.md",
+        "entryPoints": [
+            "src/index.ts"
+        ],
+        "out": "docs"
+    }
 }
