@@ -2,7 +2,7 @@
 Node.js package for the Vishay VEML6070 UVA Light Sensor, written in TypeScript.
 
 ## Requirements
-* [Node.js](https://nodejs.org/) 14 or later (v14.15.3 LTS was used during development; other versions have not been tested)
+* [Node.js](https://nodejs.org/) 14 or later (v14.16.1 LTS was used during development)
 * [Vishay VEML6070 UVA Light Sensor with I<sup>2</sup>C Interface]() connected to for example a [Raspberry Pi](https://www.raspberrypi.org)
 
 ## Dependencies
