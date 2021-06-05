@@ -2,8 +2,8 @@
 Node.js package for the Vishay VEML6070 UVA Light Sensor, written in TypeScript.
 
 ## Requirements
-* [Node.js](https://nodejs.org/) 14 or later (v14.16.1 LTS was used during development)
-* [Vishay VEML6070 UVA Light Sensor with I<sup>2</sup>C Interface]() connected to for example a [Raspberry Pi](https://www.raspberrypi.org)
+* [Node.js](https://nodejs.org/) 14 or later
+* [Vishay VEML6070 UVA Light Sensor with I<sup>2</sup>C Interface](https://www.vishay.com/optical-sensors/digital-uva-sensor/) connected to for example a [Raspberry Pi](https://www.raspberrypi.org)
 
 ## Dependencies
 This package only depends on the [`i2c-bus`](https://www.npmjs.com/package/i2c-bus) package. Please refer to the `package.json` file for a list of development dependencies.
