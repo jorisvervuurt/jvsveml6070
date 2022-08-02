@@ -2,7 +2,7 @@
 Node.js package for the Vishay VEML6070 UVA Light Sensor, written in TypeScript.
 
 ## Requirements
-* [Node.js](https://nodejs.org/) 14 or later
+* [Node.js](https://nodejs.org/) 16.16.0 or later
 * [Vishay VEML6070 UVA Light Sensor with I<sup>2</sup>C Interface](https://www.vishay.com/optical-sensors/digital-uva-sensor/) connected to for example a [Raspberry Pi](https://www.raspberrypi.org)
 
 ## Dependencies
@@ -19,7 +19,7 @@ Please refer to the [Vishay VEML6070 datasheet](https://www.vishay.com/docs/8427
 **Important note**: depending on the use case, you may need to provide a custom <sup>R</sup>SET resistor value (in kΩ, defaults to 270kΩ) and/or I<sup>2</sup>C bus number (defaults to 1). 
 
 ## License
-Copyright (c) 2021 Joris Vervuurt Software
+Copyright (c) 2021-2022 Joris Vervuurt Software
 
 Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
 
