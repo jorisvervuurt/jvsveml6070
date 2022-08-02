@@ -17,21 +17,6 @@ export class UvIndex {
     }
 
     /**
-     * Creates a new `UvIndex` instance from a sensor value.
-     * 
-     * @param rSet - The RSET value (in kΩ).
-     * @param normalizedValue - The normalized value.
-     *                          This is the raw value divided by the integration time multiplier, resulting in the 1T 
-     *                          value.
-     * 
-     * @returns The created `UvIndex` instance.
-     */
-    public static fromSensorValue(rSet: number, normalizedValue: number): UvIndex {
-        const uvIndex = Math.trunc(normalizedValue / (rSet * (186.67 / 270)));
-        return new UvIndex(uvIndex);
-    }
-
-    /**
      * The UV index risk level.
      */
     public get riskLevel(): UvIndexRiskLevel {
@@ -48,6 +33,21 @@ export class UvIndex {
         }
     
         return riskLevel;
+    }
+
+    /**
+     * Creates a new `UvIndex` instance from a sensor value.
+     * 
+     * @param rSet - The RSET value (in kΩ).
+     * @param normalizedValue - The normalized value.
+     *                          This is the raw value divided by the integration time multiplier, resulting in the 1T 
+     *                          value.
+     * 
+     * @returns The created `UvIndex` instance.
+     */
+    public static fromSensorValue(rSet: number, normalizedValue: number): UvIndex {
+        const uvIndex = Math.trunc(normalizedValue / (rSet * (186.67 / 270)));
+        return new UvIndex(uvIndex);
     }
 
 }
