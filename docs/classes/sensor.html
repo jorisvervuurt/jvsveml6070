@@ -1,1034 +1,540 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Sensor | JVSVEML6070</title>
-	<meta name="description" content="Documentation for JVSVEML6070">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="../assets/css/main.css">
-	<script async src="../assets/js/search.js" id="search-script"></script>
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="../index.html" class="title">JVSVEML6070</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="../modules.html">JVSVEML6070</a>
-				</li>
-				<li>
-					<a href="sensor.html">Sensor</a>
-				</li>
-			</ul>
-			<h1>Class Sensor</h1>
-		</div>
-	</div>
-</header>
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Sensor | JVSVEML6070</title><meta name="description" content="Documentation for JVSVEML6070"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script async src="../assets/search.js" id="search-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<div class="tsd-toolbar-contents container">
+<div class="table-cell" id="tsd-search" data-base="..">
+<div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M15.7824 13.833L12.6666 10.7177C12.5259 10.5771 12.3353 10.499 12.1353 10.499H11.6259C12.4884 9.39596 13.001 8.00859 13.001 6.49937C13.001 2.90909 10.0914 0 6.50048 0C2.90959 0 0 2.90909 0 6.49937C0 10.0896 2.90959 12.9987 6.50048 12.9987C8.00996 12.9987 9.39756 12.4863 10.5008 11.6239V12.1332C10.5008 12.3332 10.5789 12.5238 10.7195 12.6644L13.8354 15.7797C14.1292 16.0734 14.6042 16.0734 14.8948 15.7797L15.7793 14.8954C16.0731 14.6017 16.0731 14.1267 15.7824 13.833ZM6.50048 10.499C4.29094 10.499 2.50018 8.71165 2.50018 6.49937C2.50018 4.29021 4.28781 2.49976 6.50048 2.49976C8.71001 2.49976 10.5008 4.28708 10.5008 6.49937C10.5008 8.70852 8.71314 10.499 6.50048 10.499Z" fill="var(--color-text)"></path></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
+<ul class="results">
+<li class="state loading">Preparing search index...</li>
+<li class="state failure">The search index is not available</li></ul><a href="../index.html" class="title">JVSVEML6070</a></div>
+<div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="1" y="3" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="7" width="14" height="2" fill="var(--color-text)"></rect><rect x="1" y="11" width="14" height="2" fill="var(--color-text)"></rect></svg></a></div></div></header>
 <div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">Sensor</span>
-					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel-group tsd-index-group">
-				<h2>Index</h2>
-				<section class="tsd-panel tsd-index-panel">
-					<div class="tsd-index-content">
-						<section class="tsd-index-section ">
-							<h3>Constructors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="sensor.html#constructor" class="tsd-kind-icon">constructor</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_commandregister" class="tsd-kind-icon">_command<wbr>Register</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_i2cbus" class="tsd-kind-icon">_i2c<wbr>Bus</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_i2cbusstate" class="tsd-kind-icon">_i2c<wbr>Bus<wbr>State</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_state" class="tsd-kind-icon">_state</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="sensor.html#i2cbusnr" class="tsd-kind-icon">i2c<wbr>Bus<wbr>Nr</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="sensor.html#rset" class="tsd-kind-icon">r<wbr>Set</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Methods</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_checki2cbusstate" class="tsd-kind-icon">_check<wbr>I2c<wbr>Bus<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_checkstate" class="tsd-kind-icon">_check<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_closei2cbus" class="tsd-kind-icon">_close<wbr>I2c<wbr>Bus</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_openi2cbus" class="tsd-kind-icon">_open<wbr>I2c<wbr>Bus</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="sensor.html#_updatecommandregister" class="tsd-kind-icon">_update<wbr>Command<wbr>Register</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#clearackstate" class="tsd-kind-icon">clear<wbr>Ack<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#disable" class="tsd-kind-icon">disable</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#enable" class="tsd-kind-icon">enable</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#getacknowledgemode" class="tsd-kind-icon">get<wbr>Acknowledge<wbr>Mode</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#getacknowledgethreshold" class="tsd-kind-icon">get<wbr>Acknowledge<wbr>Threshold</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#geti2cbusstate" class="tsd-kind-icon">get<wbr>I2c<wbr>Bus<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#getintegrationtime" class="tsd-kind-icon">get<wbr>Integration<wbr>Time</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#getrefreshtime" class="tsd-kind-icon">get<wbr>Refresh<wbr>Time</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#getshutdownmode" class="tsd-kind-icon">get<wbr>Shutdown<wbr>Mode</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#getstate" class="tsd-kind-icon">get<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#read" class="tsd-kind-icon">read</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#setacknowledge" class="tsd-kind-icon">set<wbr>Acknowledge</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#setacknowledgemode" class="tsd-kind-icon">set<wbr>Acknowledge<wbr>Mode</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#setacknowledgethreshold" class="tsd-kind-icon">set<wbr>Acknowledge<wbr>Threshold</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#setintegrationtime" class="tsd-kind-icon">set<wbr>Integration<wbr>Time</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="sensor.html#setshutdownmode" class="tsd-kind-icon">set<wbr>Shutdown<wbr>Mode</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><a href="sensor.html#initialize" class="tsd-kind-icon">initialize</a></li>
-							</ul>
-						</section>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
-					<a name="constructor" class="tsd-anchor"></a>
-					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Sensor<span class="tsd-signature-symbol">(</span>i2cBusNr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, rSet<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L45">src/lib/Sensor.ts:45</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Creates a new <code>Sensor</code> instance.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>i2cBusNr: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The I2C bus number. Defaults to 1.</p>
-									</div>
-								</li>
-								<li>
-									<h5>rSet: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 270</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The RSET value (in kΩ), which is used to determine the sensor&#39;s refresh time. Defaults to 270 kΩ.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a></h4>
-						</li>
-					</ul>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_commandregister" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _command<wbr>Register</h3>
-					<div class="tsd-signature tsd-kind-icon">_command<wbr>Register<span class="tsd-signature-symbol">:</span> <a href="commandregister.html" class="tsd-signature-type" data-tsd-kind="Class">CommandRegister</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L30">src/lib/Sensor.ts:30</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The internal <code>CommandRegister</code> instance.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_i2cbus" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _i2c<wbr>Bus</h3>
-					<div class="tsd-signature tsd-kind-icon">_i2c<wbr>Bus<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromisifiedBus</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L40">src/lib/Sensor.ts:40</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The I2C bus.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_i2cbusstate" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _i2c<wbr>Bus<wbr>State</h3>
-					<div class="tsd-signature tsd-kind-icon">_i2c<wbr>Bus<wbr>State<span class="tsd-signature-symbol">:</span> <a href="../enums/enums.i2cbusstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L45">src/lib/Sensor.ts:45</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The I2C bus state.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
-					<a name="_state" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _state</h3>
-					<div class="tsd-signature tsd-kind-icon">_state<span class="tsd-signature-symbol">:</span> <a href="../enums/enums.sensorstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L35">src/lib/Sensor.ts:35</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The sensor state.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="i2cbusnr" class="tsd-anchor"></a>
-					<h3>i2c<wbr>Bus<wbr>Nr</h3>
-					<div class="tsd-signature tsd-kind-icon">i2c<wbr>Bus<wbr>Nr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L20">src/lib/Sensor.ts:20</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The I2C bus number.</p>
-						</div>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="rset" class="tsd-anchor"></a>
-					<h3>r<wbr>Set</h3>
-					<div class="tsd-signature tsd-kind-icon">r<wbr>Set<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L25">src/lib/Sensor.ts:25</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>The RSET value (in kΩ), which is used to determine the sensor&#39;s refresh time.</p>
-						</div>
-					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="_checki2cbusstate" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _check<wbr>I2c<wbr>Bus<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_check<wbr>I2c<wbr>Bus<wbr>State<span class="tsd-signature-symbol">(</span>expectedState<span class="tsd-signature-symbol">: </span><a href="../enums/enums.i2cbusstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L318">src/lib/Sensor.ts:318</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Checks the I2C bus state.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>expectedState: <a href="../enums/enums.i2cbusstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The expected <code>I2CBusState</code> enumeration value.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the state is as expected.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="_checkstate" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _check<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_check<wbr>State<span class="tsd-signature-symbol">(</span>expectedState<span class="tsd-signature-symbol">: </span><a href="../enums/enums.sensorstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L375">src/lib/Sensor.ts:375</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Checks the sensor&#39;s state.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>expectedState: <a href="../enums/enums.sensorstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The expected <code>SensorState</code> enumeration value.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the state is as expected.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="_closei2cbus" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _close<wbr>I2c<wbr>Bus</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_close<wbr>I2c<wbr>Bus<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L353">src/lib/Sensor.ts:353</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Closes the I2C bus.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the I2C bus has been closed.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="_openi2cbus" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _open<wbr>I2c<wbr>Bus</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_open<wbr>I2c<wbr>Bus<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L333">src/lib/Sensor.ts:333</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Opens the I2C bus.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the I2C bus has been opened.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="_updatecommandregister" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _update<wbr>Command<wbr>Register</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">_update<wbr>Command<wbr>Register<span class="tsd-signature-symbol">(</span>commandRegister<span class="tsd-signature-symbol">: </span><a href="commandregister.html" class="tsd-signature-type" data-tsd-kind="Class">CommandRegister</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L393">src/lib/Sensor.ts:393</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Updates the sensor&#39;s command register.
-									On success, the internal <code>CommandRegister</code> instance is updated.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>commandRegister: <a href="commandregister.html" class="tsd-signature-type" data-tsd-kind="Class">CommandRegister</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The <code>CommandRegister</code> instance containing the data to write.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the sensor&#39;s command register has been updated.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="clearackstate" class="tsd-anchor"></a>
-					<h3>clear<wbr>Ack<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">clear<wbr>Ack<wbr>State<span class="tsd-signature-symbol">(</span>ignoreError<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L271">src/lib/Sensor.ts:271</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Clears the ACK state.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>ignoreError: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A <code>boolean</code> value that determines whether the returned <code>Promise</code> resolves even on error.
-											Defaults to <code>true</code> because the Alert Response Address seems to be never valid. This seems to
-										be an error in the datasheet.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the ACK state has been cleared.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="disable" class="tsd-anchor"></a>
-					<h3>disable</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">disable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L126">src/lib/Sensor.ts:126</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Disables the sensor.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the sensor has been shut down and all resources have been freed up.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="enable" class="tsd-anchor"></a>
-					<h3>enable</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">enable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L103">src/lib/Sensor.ts:103</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Enables the sensor.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the sensor has been initialized.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getacknowledgemode" class="tsd-anchor"></a>
-					<h3>get<wbr>Acknowledge<wbr>Mode</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Acknowledge<wbr>Mode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/enums.acknowledgemode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L205">src/lib/Sensor.ts:205</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the acknowledge mode.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/enums.acknowledgemode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a></h4>
-							<p>The <code>AcknowledgeMode</code> enumeration value.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getacknowledgethreshold" class="tsd-anchor"></a>
-					<h3>get<wbr>Acknowledge<wbr>Threshold</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Acknowledge<wbr>Threshold<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/enums.acknowledgethreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L225">src/lib/Sensor.ts:225</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the acknowledge threshold.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/enums.acknowledgethreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a></h4>
-							<p>The <code>AcknowledgeThreshold</code> enumeration value.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="geti2cbusstate" class="tsd-anchor"></a>
-					<h3>get<wbr>I2c<wbr>Bus<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>I2c<wbr>Bus<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/enums.i2cbusstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L85">src/lib/Sensor.ts:85</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the I2C bus state.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/enums.i2cbusstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a></h4>
-							<p>The <code>I2CBusState</code> enumeration value.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getintegrationtime" class="tsd-anchor"></a>
-					<h3>get<wbr>Integration<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Integration<wbr>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="integrationtime.html" class="tsd-signature-type" data-tsd-kind="Class">IntegrationTime</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L172">src/lib/Sensor.ts:172</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the integration time.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="integrationtime.html" class="tsd-signature-type" data-tsd-kind="Class">IntegrationTime</a></h4>
-							<p>An <code>IntegrationTime</code> instance.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getrefreshtime" class="tsd-anchor"></a>
-					<h3>get<wbr>Refresh<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Refresh<wbr>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L195">src/lib/Sensor.ts:195</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the refresh time.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-							<p>The refresh time in milliseconds.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getshutdownmode" class="tsd-anchor"></a>
-					<h3>get<wbr>Shutdown<wbr>Mode</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Shutdown<wbr>Mode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/enums.shutdownmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L149">src/lib/Sensor.ts:149</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the shutdown mode.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/enums.shutdownmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a></h4>
-							<p>The <code>ShutdownMode</code> enumeration value.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="getstate" class="tsd-anchor"></a>
-					<h3>get<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/enums.sensorstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L94">src/lib/Sensor.ts:94</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Retrieves the sensor&#39;s state.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <a href="../enums/enums.sensorstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a></h4>
-							<p>The <code>SensorState</code> enumeration value.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="read" class="tsd-anchor"></a>
-					<h3>read</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">read<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="sensorvalue.html" class="tsd-signature-type" data-tsd-kind="Class">SensorValue</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L291">src/lib/Sensor.ts:291</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Reads the value.</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="sensorvalue.html" class="tsd-signature-type" data-tsd-kind="Class">SensorValue</a><span class="tsd-signature-symbol">&gt;</span></h4>
-							<ul>
-								<li>A <code>Promise</code> that resolves when the value has been read.</li>
-							</ul>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setacknowledge" class="tsd-anchor"></a>
-					<h3>set<wbr>Acknowledge</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Acknowledge<span class="tsd-signature-symbol">(</span>ackMode<span class="tsd-signature-symbol">?: </span><a href="../enums/enums.acknowledgemode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a>, ackThreshold<span class="tsd-signature-symbol">?: </span><a href="../enums/enums.acknowledgethreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L248">src/lib/Sensor.ts:248</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Sets the acknowledge mode and/or threshold.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> ackMode: <a href="../enums/enums.acknowledgemode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An optional <code>AcknowledgeMode</code> enumeration value.</p>
-									</div>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> ackThreshold: <a href="../enums/enums.acknowledgethreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An optional <code>AcknowledgeThreshold</code> enumeration value.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the acknowledge mode and/or threshold have been set.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setacknowledgemode" class="tsd-anchor"></a>
-					<h3>set<wbr>Acknowledge<wbr>Mode</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Acknowledge<wbr>Mode<span class="tsd-signature-symbol">(</span>ackMode<span class="tsd-signature-symbol">: </span><a href="../enums/enums.acknowledgemode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L216">src/lib/Sensor.ts:216</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Sets the acknowledge mode.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>ackMode: <a href="../enums/enums.acknowledgemode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <code>AcknowledgeMode</code> enumeration value.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the acknowledge mode has been set.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setacknowledgethreshold" class="tsd-anchor"></a>
-					<h3>set<wbr>Acknowledge<wbr>Threshold</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Acknowledge<wbr>Threshold<span class="tsd-signature-symbol">(</span>ackThreshold<span class="tsd-signature-symbol">: </span><a href="../enums/enums.acknowledgethreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L236">src/lib/Sensor.ts:236</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Sets the acknowledge threshold.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>ackThreshold: <a href="../enums/enums.acknowledgethreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <code>AcknowledgeThreshold</code> enumeration value.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the acknowledge threshold has been set.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setintegrationtime" class="tsd-anchor"></a>
-					<h3>set<wbr>Integration<wbr>Time</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Integration<wbr>Time<span class="tsd-signature-symbol">(</span>integrationTime<span class="tsd-signature-symbol">: </span><a href="../enums/enums.integrationtime.html" class="tsd-signature-type" data-tsd-kind="Enumeration">IntegrationTime</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L183">src/lib/Sensor.ts:183</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Sets the integration time.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>integrationTime: <a href="../enums/enums.integrationtime.html" class="tsd-signature-type" data-tsd-kind="Enumeration">IntegrationTime</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>An <code>IntegrationTime</code> enumeration value.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the integration time has been set.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="setshutdownmode" class="tsd-anchor"></a>
-					<h3>set<wbr>Shutdown<wbr>Mode</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Shutdown<wbr>Mode<span class="tsd-signature-symbol">(</span>shutdownMode<span class="tsd-signature-symbol">: </span><a href="../enums/enums.shutdownmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L160">src/lib/Sensor.ts:160</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Sets the shutdown mode.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>shutdownMode: <a href="../enums/enums.shutdownmode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>A <code>ShutdownMode</code> enumeration value.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the shutdown mode has been set.</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-static">
-					<a name="initialize" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> initialize</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-static">
-						<li class="tsd-signature tsd-kind-icon">initialize<span class="tsd-signature-symbol">(</span>i2cBusNr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, rSet<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a><span class="tsd-signature-symbol">&gt;</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/50e3114/src/lib/Sensor.ts#L71">src/lib/Sensor.ts:71</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Creates a new <code>Sensor</code> instance and enables the sensor.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>i2cBusNr: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The I2C bus number. Defaults to 1.</p>
-									</div>
-								</li>
-								<li>
-									<h5>rSet: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 270</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The RSET value (in kΩ), which is used to determine the sensor&#39;s refresh time. Defaults to 270 kΩ.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a><span class="tsd-signature-symbol">&gt;</span></h4>
-							<p>A <code>Promise</code> that resolves when the sensor has been enabled.</p>
-						</li>
-					</ul>
-				</section>
-			</section>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class=" ">
-						<a href="../modules.html">Exports</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="byte.html" class="tsd-kind-icon">Byte</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="commandregister.html" class="tsd-kind-icon">Command<wbr>Register</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="integrationtime.html" class="tsd-kind-icon">Integration<wbr>Time</a>
-					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-class">
-						<a href="sensor.html" class="tsd-kind-icon">Sensor</a>
-						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="sensor.html#constructor" class="tsd-kind-icon">constructor</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_commandregister" class="tsd-kind-icon">_command<wbr>Register</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_i2cbus" class="tsd-kind-icon">_i2c<wbr>Bus</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_i2cbusstate" class="tsd-kind-icon">_i2c<wbr>Bus<wbr>State</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_state" class="tsd-kind-icon">_state</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="sensor.html#i2cbusnr" class="tsd-kind-icon">i2c<wbr>Bus<wbr>Nr</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="sensor.html#rset" class="tsd-kind-icon">r<wbr>Set</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_checki2cbusstate" class="tsd-kind-icon">_check<wbr>I2c<wbr>Bus<wbr>State</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_checkstate" class="tsd-kind-icon">_check<wbr>State</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_closei2cbus" class="tsd-kind-icon">_close<wbr>I2c<wbr>Bus</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_openi2cbus" class="tsd-kind-icon">_open<wbr>I2c<wbr>Bus</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
-								<a href="sensor.html#_updatecommandregister" class="tsd-kind-icon">_update<wbr>Command<wbr>Register</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#clearackstate" class="tsd-kind-icon">clear<wbr>Ack<wbr>State</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#disable" class="tsd-kind-icon">disable</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#enable" class="tsd-kind-icon">enable</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#getacknowledgemode" class="tsd-kind-icon">get<wbr>Acknowledge<wbr>Mode</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#getacknowledgethreshold" class="tsd-kind-icon">get<wbr>Acknowledge<wbr>Threshold</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#geti2cbusstate" class="tsd-kind-icon">get<wbr>I2c<wbr>Bus<wbr>State</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#getintegrationtime" class="tsd-kind-icon">get<wbr>Integration<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#getrefreshtime" class="tsd-kind-icon">get<wbr>Refresh<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#getshutdownmode" class="tsd-kind-icon">get<wbr>Shutdown<wbr>Mode</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#getstate" class="tsd-kind-icon">get<wbr>State</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#read" class="tsd-kind-icon">read</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#setacknowledge" class="tsd-kind-icon">set<wbr>Acknowledge</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#setacknowledgemode" class="tsd-kind-icon">set<wbr>Acknowledge<wbr>Mode</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#setacknowledgethreshold" class="tsd-kind-icon">set<wbr>Acknowledge<wbr>Threshold</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#setintegrationtime" class="tsd-kind-icon">set<wbr>Integration<wbr>Time</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="sensor.html#setshutdownmode" class="tsd-kind-icon">set<wbr>Shutdown<wbr>Mode</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-static">
-								<a href="sensor.html#initialize" class="tsd-kind-icon">initialize</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-class">
-						<a href="sensorvalue.html" class="tsd-kind-icon">Sensor<wbr>Value</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="uvindex.html" class="tsd-kind-icon">Uv<wbr>Index</a>
-					</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+<div class="col-8 col-content">
+<div class="tsd-page-title">
+<ul class="tsd-breadcrumb">
+<li><a href="../modules.html">JVSVEML6070</a></li>
+<li><a href="Sensor.html">Sensor</a></li></ul>
+<h1>Class Sensor</h1></div>
+<section class="tsd-panel tsd-hierarchy">
+<h4>Hierarchy</h4>
+<ul class="tsd-hierarchy">
+<li><span class="target">Sensor</span></li></ul></section><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L15">src/lib/Sensor.ts:15</a></li></ul></aside>
+<section class="tsd-panel-group tsd-index-group">
+<section class="tsd-panel tsd-index-panel">
+<details class="tsd-index-content tsd-index-accordion" open><summary class="tsd-accordion-summary tsd-index-summary">
+<h5 class="tsd-index-heading uppercase" role="button" aria-expanded="false" tabIndex=0><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M1.5 5.50969L8 11.6609L14.5 5.50969L12.5466 3.66086L8 7.96494L3.45341 3.66086L1.5 5.50969Z" fill="var(--color-text)"></path></svg> Index</h5></summary>
+<div class="tsd-accordion-details">
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Constructors</h3>
+<div class="tsd-index-list"><a href="Sensor.html#constructor" class="tsd-index-link tsd-kind-constructor tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#4D7FFF" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-512-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-512-text"></path></svg><span>constructor</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Properties</h3>
+<div class="tsd-index-list"><a href="Sensor.html#_commandRegister" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF984D" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-1024-path"></rect><path d="M9.354 16V7.24H12.174C12.99 7.24 13.638 7.476 14.118 7.948C14.606 8.412 14.85 9.036 14.85 9.82C14.85 10.604 14.606 11.232 14.118 11.704C13.638 12.168 12.99 12.4 12.174 12.4H10.434V16H9.354ZM10.434 11.428H12.174C12.646 11.428 13.022 11.284 13.302 10.996C13.59 10.7 13.734 10.308 13.734 9.82C13.734 9.324 13.59 8.932 13.302 8.644C13.022 8.356 12.646 8.212 12.174 8.212H10.434V11.428Z" fill="var(--color-text)" id="icon-1024-text"></path></svg><span>_command<wbr/>Register</span></a>
+<a href="Sensor.html#_i2cBus" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>_i2c<wbr/>Bus</span></a>
+<a href="Sensor.html#_i2cBusState" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>_i2c<wbr/>Bus<wbr/>State</span></a>
+<a href="Sensor.html#_state" class="tsd-index-link tsd-kind-property tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>_state</span></a>
+<a href="Sensor.html#i2cBusNr" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>i2c<wbr/>Bus<wbr/>Nr</span></a>
+<a href="Sensor.html#rSet" class="tsd-index-link tsd-kind-property tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg><span>r<wbr/>Set</span></a>
+</div></section>
+<section class="tsd-index-section">
+<h3 class="tsd-index-heading">Methods</h3>
+<div class="tsd-index-list"><a href="Sensor.html#_checkI2cBusState" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="#FF4DB8" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="12" id="icon-2048-path"></rect><path d="M9.162 16V7.24H10.578L11.514 10.072C11.602 10.328 11.674 10.584 11.73 10.84C11.794 11.088 11.842 11.28 11.874 11.416C11.906 11.28 11.954 11.088 12.018 10.84C12.082 10.584 12.154 10.324 12.234 10.06L13.122 7.24H14.538V16H13.482V12.82C13.482 12.468 13.49 12.068 13.506 11.62C13.53 11.172 13.558 10.716 13.59 10.252C13.622 9.78 13.654 9.332 13.686 8.908C13.726 8.476 13.762 8.1 13.794 7.78L12.366 12.16H11.334L9.894 7.78C9.934 8.092 9.97 8.456 10.002 8.872C10.042 9.28 10.078 9.716 10.11 10.18C10.142 10.636 10.166 11.092 10.182 11.548C10.206 12.004 10.218 12.428 10.218 12.82V16H9.162Z" fill="var(--color-text)" id="icon-2048-text"></path></svg><span>_check<wbr/>I2c<wbr/>Bus<wbr/>State</span></a>
+<a href="Sensor.html#_checkState" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>_check<wbr/>State</span></a>
+<a href="Sensor.html#_closeI2cBus" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>_close<wbr/>I2c<wbr/>Bus</span></a>
+<a href="Sensor.html#_openI2cBus" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>_open<wbr/>I2c<wbr/>Bus</span></a>
+<a href="Sensor.html#_updateCommandRegister" class="tsd-index-link tsd-kind-method tsd-parent-kind-class tsd-is-private"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>_update<wbr/>Command<wbr/>Register</span></a>
+<a href="Sensor.html#clearAckState" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>clear<wbr/>Ack<wbr/>State</span></a>
+<a href="Sensor.html#disable" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>disable</span></a>
+<a href="Sensor.html#enable" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>enable</span></a>
+<a href="Sensor.html#getAcknowledgeMode" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Acknowledge<wbr/>Mode</span></a>
+<a href="Sensor.html#getAcknowledgeThreshold" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Acknowledge<wbr/>Threshold</span></a>
+<a href="Sensor.html#getI2cBusState" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>I2c<wbr/>Bus<wbr/>State</span></a>
+<a href="Sensor.html#getIntegrationTime" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Integration<wbr/>Time</span></a>
+<a href="Sensor.html#getRefreshTime" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Refresh<wbr/>Time</span></a>
+<a href="Sensor.html#getShutdownMode" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>Shutdown<wbr/>Mode</span></a>
+<a href="Sensor.html#getState" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>get<wbr/>State</span></a>
+<a href="Sensor.html#read" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>read</span></a>
+<a href="Sensor.html#setAcknowledge" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Acknowledge</span></a>
+<a href="Sensor.html#setAcknowledgeMode" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Acknowledge<wbr/>Mode</span></a>
+<a href="Sensor.html#setAcknowledgeThreshold" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Acknowledge<wbr/>Threshold</span></a>
+<a href="Sensor.html#setIntegrationTime" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Integration<wbr/>Time</span></a>
+<a href="Sensor.html#setShutdownMode" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>set<wbr/>Shutdown<wbr/>Mode</span></a>
+<a href="Sensor.html#initialize" class="tsd-index-link tsd-kind-method tsd-parent-kind-class"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg><span>initialize</span></a>
+</div></section></div></details></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Constructors</h2>
+<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class"><a id="constructor" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>constructor</span><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" id="icon-anchor-a"></path><path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" id="icon-anchor-b"></path><path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" id="icon-anchor-c"></path></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="constructor.new_Sensor">new <wbr/>Sensor<span class="tsd-signature-symbol">(</span>i2cBusNr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, rSet<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="Sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a><a href="#constructor.new_Sensor" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Creates a new <code>Sensor</code> instance.</p>
 </div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
-				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>i2cBusNr: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
+<div class="tsd-comment tsd-typography"><p>The I2C bus number. Defaults to 1.</p>
+</div></li>
+<li>
+<h5>rSet: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 270</span></h5>
+<div class="tsd-comment tsd-typography"><p>The RSET value (in kΩ), which is used to determine the sensor&#39;s refresh time. Defaults to 270 kΩ.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <a href="Sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L53">src/lib/Sensor.ts:53</a></li></ul></aside></li></ul></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Properties</h2>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_commandRegister" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_command<wbr/>Register</span><a href="#_commandRegister" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">_command<wbr/>Register<span class="tsd-signature-symbol">:</span> <a href="CommandRegister.html" class="tsd-signature-type" data-tsd-kind="Class">CommandRegister</a></div>
+<div class="tsd-comment tsd-typography"><p>The internal <code>CommandRegister</code> instance.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L30">src/lib/Sensor.ts:30</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_i2cBus" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_i2c<wbr/>Bus</span><a href="#_i2cBus" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">_i2c<wbr/>Bus<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">PromisifiedBus</span></div>
+<div class="tsd-comment tsd-typography"><p>The I2C bus.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L40">src/lib/Sensor.ts:40</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_i2cBusState" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_i2c<wbr/>Bus<wbr/>State</span><a href="#_i2cBusState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">_i2c<wbr/>Bus<wbr/>State<span class="tsd-signature-symbol">:</span> <a href="../enums/Enums.I2CBusState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a></div>
+<div class="tsd-comment tsd-typography"><p>The I2C bus state.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L45">src/lib/Sensor.ts:45</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private"><a id="_state" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_state</span><a href="#_state" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">_state<span class="tsd-signature-symbol">:</span> <a href="../enums/Enums.SensorState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a></div>
+<div class="tsd-comment tsd-typography"><p>The sensor state.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L35">src/lib/Sensor.ts:35</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="i2cBusNr" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>i2c<wbr/>Bus<wbr/>Nr</span><a href="#i2cBusNr" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">i2c<wbr/>Bus<wbr/>Nr<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The I2C bus number.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L20">src/lib/Sensor.ts:20</a></li></ul></aside></section>
+<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class"><a id="rSet" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>r<wbr/>Set</span><a href="#rSet" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<div class="tsd-signature">r<wbr/>Set<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+<div class="tsd-comment tsd-typography"><p>The RSET value (in kΩ), which is used to determine the sensor&#39;s refresh time.</p>
+</div><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L25">src/lib/Sensor.ts:25</a></li></ul></aside></section></section>
+<section class="tsd-panel-group tsd-member-group">
+<h2>Methods</h2>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="_checkI2cBusState" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_check<wbr/>I2c<wbr/>Bus<wbr/>State</span><a href="#_checkI2cBusState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+<li class="tsd-signature tsd-anchor-link" id="_checkI2cBusState._checkI2cBusState-1">_check<wbr/>I2c<wbr/>Bus<wbr/>State<span class="tsd-signature-symbol">(</span>expectedState<span class="tsd-signature-symbol">: </span><a href="../enums/Enums.I2CBusState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#_checkI2cBusState._checkI2cBusState-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Checks the I2C bus state.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the state is as expected.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>expectedState: <a href="../enums/Enums.I2CBusState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a></h5>
+<div class="tsd-comment tsd-typography"><p>The expected <code>I2CBusState</code> enumeration value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L318">src/lib/Sensor.ts:318</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="_checkState" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_check<wbr/>State</span><a href="#_checkState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+<li class="tsd-signature tsd-anchor-link" id="_checkState._checkState-1">_check<wbr/>State<span class="tsd-signature-symbol">(</span>expectedState<span class="tsd-signature-symbol">: </span><a href="../enums/Enums.SensorState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#_checkState._checkState-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Checks the sensor&#39;s state.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the state is as expected.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>expectedState: <a href="../enums/Enums.SensorState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a></h5>
+<div class="tsd-comment tsd-typography"><p>The expected <code>SensorState</code> enumeration value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L375">src/lib/Sensor.ts:375</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="_closeI2cBus" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_close<wbr/>I2c<wbr/>Bus</span><a href="#_closeI2cBus" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+<li class="tsd-signature tsd-anchor-link" id="_closeI2cBus._closeI2cBus-1">_close<wbr/>I2c<wbr/>Bus<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#_closeI2cBus._closeI2cBus-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Closes the I2C bus.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the I2C bus has been closed.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L353">src/lib/Sensor.ts:353</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="_openI2cBus" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_open<wbr/>I2c<wbr/>Bus</span><a href="#_openI2cBus" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+<li class="tsd-signature tsd-anchor-link" id="_openI2cBus._openI2cBus-1">_open<wbr/>I2c<wbr/>Bus<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#_openI2cBus._openI2cBus-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Opens the I2C bus.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the I2C bus has been opened.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L333">src/lib/Sensor.ts:333</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private"><a id="_updateCommandRegister" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagPrivate">Private</code> <span>_update<wbr/>Command<wbr/>Register</span><a href="#_updateCommandRegister" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+<li class="tsd-signature tsd-anchor-link" id="_updateCommandRegister._updateCommandRegister-1">_update<wbr/>Command<wbr/>Register<span class="tsd-signature-symbol">(</span>commandRegister<span class="tsd-signature-symbol">: </span><a href="CommandRegister.html" class="tsd-signature-type" data-tsd-kind="Class">CommandRegister</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#_updateCommandRegister._updateCommandRegister-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Updates the sensor&#39;s command register.
+On success, the internal <code>CommandRegister</code> instance is updated.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the sensor&#39;s command register has been updated.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>commandRegister: <a href="CommandRegister.html" class="tsd-signature-type" data-tsd-kind="Class">CommandRegister</a></h5>
+<div class="tsd-comment tsd-typography"><p>The <code>CommandRegister</code> instance containing the data to write.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L393">src/lib/Sensor.ts:393</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="clearAckState" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>clear<wbr/>Ack<wbr/>State</span><a href="#clearAckState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="clearAckState.clearAckState-1">clear<wbr/>Ack<wbr/>State<span class="tsd-signature-symbol">(</span>ignoreError<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#clearAckState.clearAckState-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Clears the ACK state.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the ACK state has been cleared.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>ignoreError: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+<div class="tsd-comment tsd-typography"><p>A <code>boolean</code> value that determines whether the returned <code>Promise</code> resolves even on error.
+                     Defaults to <code>true</code> because the Alert Response Address seems to be never valid. This seems to
+                     be an error in the datasheet.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L271">src/lib/Sensor.ts:271</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="disable" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>disable</span><a href="#disable" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="disable.disable-1">disable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#disable.disable-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Disables the sensor.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the sensor has been shut down and all resources have been freed up.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L126">src/lib/Sensor.ts:126</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="enable" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>enable</span><a href="#enable" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="enable.enable-1">enable<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#enable.enable-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Enables the sensor.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the sensor has been initialized.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L103">src/lib/Sensor.ts:103</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getAcknowledgeMode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Acknowledge<wbr/>Mode</span><a href="#getAcknowledgeMode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="getAcknowledgeMode.getAcknowledgeMode-1">get<wbr/>Acknowledge<wbr/>Mode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/Enums.AcknowledgeMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a><a href="#getAcknowledgeMode.getAcknowledgeMode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the acknowledge mode.</p>
+
+<h3>Returns</h3><p>The <code>AcknowledgeMode</code> enumeration value.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../enums/Enums.AcknowledgeMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L205">src/lib/Sensor.ts:205</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getAcknowledgeThreshold" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Acknowledge<wbr/>Threshold</span><a href="#getAcknowledgeThreshold" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="getAcknowledgeThreshold.getAcknowledgeThreshold-1">get<wbr/>Acknowledge<wbr/>Threshold<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/Enums.AcknowledgeThreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a><a href="#getAcknowledgeThreshold.getAcknowledgeThreshold-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the acknowledge threshold.</p>
+
+<h3>Returns</h3><p>The <code>AcknowledgeThreshold</code> enumeration value.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../enums/Enums.AcknowledgeThreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L225">src/lib/Sensor.ts:225</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getI2cBusState" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>I2c<wbr/>Bus<wbr/>State</span><a href="#getI2cBusState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="getI2cBusState.getI2cBusState-1">get<wbr/>I2c<wbr/>Bus<wbr/>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/Enums.I2CBusState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a><a href="#getI2cBusState.getI2cBusState-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the I2C bus state.</p>
+
+<h3>Returns</h3><p>The <code>I2CBusState</code> enumeration value.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../enums/Enums.I2CBusState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">I2CBusState</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L85">src/lib/Sensor.ts:85</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getIntegrationTime" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Integration<wbr/>Time</span><a href="#getIntegrationTime" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="getIntegrationTime.getIntegrationTime-1">get<wbr/>Integration<wbr/>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="IntegrationTime.html" class="tsd-signature-type" data-tsd-kind="Class">IntegrationTime</a><a href="#getIntegrationTime.getIntegrationTime-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the integration time.</p>
+
+<h3>Returns</h3><p>An <code>IntegrationTime</code> instance.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="IntegrationTime.html" class="tsd-signature-type" data-tsd-kind="Class">IntegrationTime</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L172">src/lib/Sensor.ts:172</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getRefreshTime" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Refresh<wbr/>Time</span><a href="#getRefreshTime" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="getRefreshTime.getRefreshTime-1">get<wbr/>Refresh<wbr/>Time<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><a href="#getRefreshTime.getRefreshTime-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the refresh time.</p>
+
+<h3>Returns</h3><p>The refresh time in milliseconds.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L195">src/lib/Sensor.ts:195</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getShutdownMode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>Shutdown<wbr/>Mode</span><a href="#getShutdownMode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="getShutdownMode.getShutdownMode-1">get<wbr/>Shutdown<wbr/>Mode<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/Enums.ShutdownMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a><a href="#getShutdownMode.getShutdownMode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the shutdown mode.</p>
+
+<h3>Returns</h3><p>The <code>ShutdownMode</code> enumeration value.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../enums/Enums.ShutdownMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L149">src/lib/Sensor.ts:149</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="getState" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>get<wbr/>State</span><a href="#getState" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="getState.getState-1">get<wbr/>State<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/Enums.SensorState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a><a href="#getState.getState-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Retrieves the sensor&#39;s state.</p>
+
+<h3>Returns</h3><p>The <code>SensorState</code> enumeration value.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <a href="../enums/Enums.SensorState.html" class="tsd-signature-type" data-tsd-kind="Enumeration">SensorState</a></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L94">src/lib/Sensor.ts:94</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="read" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>read</span><a href="#read" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="read.read-1">read<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="SensorValue.html" class="tsd-signature-type" data-tsd-kind="Class">SensorValue</a><span class="tsd-signature-symbol">&gt;</span><a href="#read.read-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Reads the value.</p>
+
+<h3>Returns</h3><ul>
+<li>A <code>Promise</code> that resolves when the value has been read.</li>
+</ul>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="SensorValue.html" class="tsd-signature-type" data-tsd-kind="Class">SensorValue</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L291">src/lib/Sensor.ts:291</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="setAcknowledge" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Acknowledge</span><a href="#setAcknowledge" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="setAcknowledge.setAcknowledge-1">set<wbr/>Acknowledge<span class="tsd-signature-symbol">(</span>ackMode<span class="tsd-signature-symbol">?: </span><a href="../enums/Enums.AcknowledgeMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a>, ackThreshold<span class="tsd-signature-symbol">?: </span><a href="../enums/Enums.AcknowledgeThreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#setAcknowledge.setAcknowledge-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets the acknowledge mode and/or threshold.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the acknowledge mode and/or threshold have been set.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> ackMode: <a href="../enums/Enums.AcknowledgeMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a></h5>
+<div class="tsd-comment tsd-typography"><p>An optional <code>AcknowledgeMode</code> enumeration value.</p>
+</div></li>
+<li>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> ackThreshold: <a href="../enums/Enums.AcknowledgeThreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a></h5>
+<div class="tsd-comment tsd-typography"><p>An optional <code>AcknowledgeThreshold</code> enumeration value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L248">src/lib/Sensor.ts:248</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="setAcknowledgeMode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Acknowledge<wbr/>Mode</span><a href="#setAcknowledgeMode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="setAcknowledgeMode.setAcknowledgeMode-1">set<wbr/>Acknowledge<wbr/>Mode<span class="tsd-signature-symbol">(</span>ackMode<span class="tsd-signature-symbol">: </span><a href="../enums/Enums.AcknowledgeMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#setAcknowledgeMode.setAcknowledgeMode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets the acknowledge mode.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the acknowledge mode has been set.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>ackMode: <a href="../enums/Enums.AcknowledgeMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeMode</a></h5>
+<div class="tsd-comment tsd-typography"><p>An <code>AcknowledgeMode</code> enumeration value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L216">src/lib/Sensor.ts:216</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="setAcknowledgeThreshold" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Acknowledge<wbr/>Threshold</span><a href="#setAcknowledgeThreshold" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="setAcknowledgeThreshold.setAcknowledgeThreshold-1">set<wbr/>Acknowledge<wbr/>Threshold<span class="tsd-signature-symbol">(</span>ackThreshold<span class="tsd-signature-symbol">: </span><a href="../enums/Enums.AcknowledgeThreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#setAcknowledgeThreshold.setAcknowledgeThreshold-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets the acknowledge threshold.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the acknowledge threshold has been set.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>ackThreshold: <a href="../enums/Enums.AcknowledgeThreshold.html" class="tsd-signature-type" data-tsd-kind="Enumeration">AcknowledgeThreshold</a></h5>
+<div class="tsd-comment tsd-typography"><p>An <code>AcknowledgeThreshold</code> enumeration value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L236">src/lib/Sensor.ts:236</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="setIntegrationTime" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Integration<wbr/>Time</span><a href="#setIntegrationTime" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="setIntegrationTime.setIntegrationTime-1">set<wbr/>Integration<wbr/>Time<span class="tsd-signature-symbol">(</span>integrationTime<span class="tsd-signature-symbol">: </span><a href="../modules/Enums.html" class="tsd-signature-type" data-tsd-kind="Namespace">Enums</a><span class="tsd-signature-symbol">.</span><a href="../enums/Enums.IntegrationTime.html" class="tsd-signature-type" data-tsd-kind="Enumeration">IntegrationTime</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#setIntegrationTime.setIntegrationTime-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets the integration time.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the integration time has been set.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>integrationTime: <a href="../modules/Enums.html" class="tsd-signature-type" data-tsd-kind="Namespace">Enums</a><span class="tsd-signature-symbol">.</span><a href="../enums/Enums.IntegrationTime.html" class="tsd-signature-type" data-tsd-kind="Enumeration">IntegrationTime</a></h5>
+<div class="tsd-comment tsd-typography"><p>An <code>IntegrationTime</code> enumeration value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L183">src/lib/Sensor.ts:183</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="setShutdownMode" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><span>set<wbr/>Shutdown<wbr/>Mode</span><a href="#setShutdownMode" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="setShutdownMode.setShutdownMode-1">set<wbr/>Shutdown<wbr/>Mode<span class="tsd-signature-symbol">(</span>shutdownMode<span class="tsd-signature-symbol">: </span><a href="../enums/Enums.ShutdownMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span><a href="#setShutdownMode.setShutdownMode-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Sets the shutdown mode.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the shutdown mode has been set.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>shutdownMode: <a href="../enums/Enums.ShutdownMode.html" class="tsd-signature-type" data-tsd-kind="Enumeration">ShutdownMode</a></h5>
+<div class="tsd-comment tsd-typography"><p>A <code>ShutdownMode</code> enumeration value.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L160">src/lib/Sensor.ts:160</a></li></ul></aside></li></ul></section>
+<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class"><a id="initialize" class="tsd-anchor"></a>
+<h3 class="tsd-anchor-link"><code class="tsd-tag ts-flagStatic">Static</code> <span>initialize</span><a href="#initialize" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></h3>
+<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+<li class="tsd-signature tsd-anchor-link" id="initialize.initialize-1">initialize<span class="tsd-signature-symbol">(</span>i2cBusNr<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, rSet<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="Sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a><span class="tsd-signature-symbol">&gt;</span><a href="#initialize.initialize-1" aria-label="Permalink" class="tsd-anchor-icon"><svg class="icon icon-tabler icon-tabler-link" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-anchor-a"></use><use href="#icon-anchor-b"></use><use href="#icon-anchor-c"></use></svg></a></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Creates a new <code>Sensor</code> instance and enables the sensor.</p>
+
+<h3>Returns</h3><p>A <code>Promise</code> that resolves when the sensor has been enabled.</p>
+</div>
+<div class="tsd-parameters">
+<h4 class="tsd-parameters-title">Parameters</h4>
+<ul class="tsd-parameter-list">
+<li>
+<h5>i2cBusNr: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
+<div class="tsd-comment tsd-typography"><p>The I2C bus number. Defaults to 1.</p>
+</div></li>
+<li>
+<h5>rSet: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 270</span></h5>
+<div class="tsd-comment tsd-typography"><p>The RSET value (in kΩ), which is used to determine the sensor&#39;s refresh time. Defaults to 270 kΩ.</p>
+</div></li></ul></div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="Sensor.html" class="tsd-signature-type" data-tsd-kind="Class">Sensor</a><span class="tsd-signature-symbol">&gt;</span></h4><aside class="tsd-sources">
+<ul>
+<li>Defined in <a href="https://github.com/jorisvervuurt/jvsveml6070/blob/18862c6/src/lib/Sensor.ts#L71">src/lib/Sensor.ts:71</a></li></ul></aside></li></ul></section></section></div>
+<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+<div class="tsd-navigation settings">
+<details class="tsd-index-accordion"><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Settings</h3></summary>
+<div class="tsd-accordion-details">
+<div class="tsd-filter-visibility">
+<h4 class="uppercase">Member Visibility</h4><form>
+<ul id="tsd-filter-options">
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-private" name="private"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Private</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li>
+<li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></form></div>
+<div class="tsd-theme-toggle">
+<h4 class="uppercase">Theme</h4><select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div>
+<nav class="tsd-navigation primary">
+<details class="tsd-index-accordion" open><summary class="tsd-accordion-summary">
+<h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4.93896 8.531L12 15.591L19.061 8.531L16.939 6.409L12 11.349L7.06098 6.409L4.93896 8.531Z" fill="var(--color-text)"></path></svg> Modules</h3></summary>
+<div class="tsd-accordion-details">
+<ul>
+<li><a href="../modules.html">JVSVEML6070</a>
+<ul>
+<li class="tsd-kind-namespace"><a href="../modules/Enums.html">Enums</a></li>
+<li class="tsd-kind-namespace"><a href="../modules/Errors.html">Errors</a></li>
+<li class="tsd-kind-namespace"><a href="../modules/Helpers.html">Helpers</a></li></ul></li></ul></div></details></nav>
+<nav class="tsd-navigation secondary menu-sticky">
+<ul>
+<li class="current tsd-kind-class"><a href="Sensor.html" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-class)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6" id="icon-128-path"></rect><path d="M11.898 16.1201C11.098 16.1201 10.466 15.8961 10.002 15.4481C9.53803 15.0001 9.30603 14.3841 9.30603 13.6001V9.64012C9.30603 8.85612 9.53803 8.24012 10.002 7.79212C10.466 7.34412 11.098 7.12012 11.898 7.12012C12.682 7.12012 13.306 7.34812 13.77 7.80412C14.234 8.25212 14.466 8.86412 14.466 9.64012H13.386C13.386 9.14412 13.254 8.76412 12.99 8.50012C12.734 8.22812 12.37 8.09212 11.898 8.09212C11.426 8.09212 11.054 8.22412 10.782 8.48812C10.518 8.75212 10.386 9.13212 10.386 9.62812V13.6001C10.386 14.0961 10.518 14.4801 10.782 14.7521C11.054 15.0161 11.426 15.1481 11.898 15.1481C12.37 15.1481 12.734 15.0161 12.99 14.7521C13.254 14.4801 13.386 14.0961 13.386 13.6001H14.466C14.466 14.3761 14.234 14.9921 13.77 15.4481C13.306 15.8961 12.682 16.1201 11.898 16.1201Z" fill="var(--color-text)" id="icon-128-text"></path></svg><span>Sensor</span></a>
+<ul>
+<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="Sensor.html#constructor" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-512-path"></use><use href="#icon-512-text"></use></svg>constructor</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_commandRegister" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_command<wbr/>Register</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_i2cBus" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_i2c<wbr/>Bus</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_i2cBusState" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_i2c<wbr/>Bus<wbr/>State</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_state" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>_state</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class"><a href="Sensor.html#i2cBusNr" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>i2c<wbr/>Bus<wbr/>Nr</a></li>
+<li class="tsd-kind-property tsd-parent-kind-class"><a href="Sensor.html#rSet" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-1024-path"></use><use href="#icon-1024-text"></use></svg>r<wbr/>Set</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_checkI2cBusState" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>_check<wbr/>I2c<wbr/>Bus<wbr/>State</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_checkState" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>_check<wbr/>State</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_closeI2cBus" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>_close<wbr/>I2c<wbr/>Bus</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_openI2cBus" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>_open<wbr/>I2c<wbr/>Bus</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="Sensor.html#_updateCommandRegister" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>_update<wbr/>Command<wbr/>Register</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#clearAckState" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>clear<wbr/>Ack<wbr/>State</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#disable" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>disable</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#enable" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>enable</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#getAcknowledgeMode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Acknowledge<wbr/>Mode</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#getAcknowledgeThreshold" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Acknowledge<wbr/>Threshold</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#getI2cBusState" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>I2c<wbr/>Bus<wbr/>State</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#getIntegrationTime" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Integration<wbr/>Time</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#getRefreshTime" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Refresh<wbr/>Time</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#getShutdownMode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>Shutdown<wbr/>Mode</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#getState" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>get<wbr/>State</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#read" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>read</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#setAcknowledge" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Acknowledge</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#setAcknowledgeMode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Acknowledge<wbr/>Mode</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#setAcknowledgeThreshold" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Acknowledge<wbr/>Threshold</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#setIntegrationTime" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Integration<wbr/>Time</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#setShutdownMode" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>set<wbr/>Shutdown<wbr/>Mode</a></li>
+<li class="tsd-kind-method tsd-parent-kind-class"><a href="Sensor.html#initialize" class="tsd-index-link"><svg class="tsd-kind-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon-2048-path"></use><use href="#icon-2048-text"></use></svg>initialize</a></li></ul></li></ul></nav></div></div>
 <div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="../assets/js/main.js"></script>
-</body>
-</html>
+<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div>
+<div class="overlay"></div><script src="../assets/main.js"></script></body></html>
